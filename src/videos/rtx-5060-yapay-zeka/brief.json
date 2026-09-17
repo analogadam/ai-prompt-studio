@@ -12,8 +12,7 @@
     {
       "type": "broll",
       "durationInSeconds": 8,
-      "src": "ekran-karti.mp4",
-      "startFromInSeconds": 2,
+      "src": "bellek.mp4",
       "motion": "in",
       "caption": "Sınırı hız değil bellek koyar",
       "highlight": "bellek"
@@ -47,15 +46,15 @@
     },
     {
       "type": "broll",
-      "durationInSeconds": 6,
-      "src": "bellek.mp4",
+      "durationInSeconds": 5,
+      "src": "ekran-karti.mp4",
       "motion": "left",
       "caption": "13B tam sınırda",
       "highlight": "sınırda"
     },
     {
       "type": "broll",
-      "durationInSeconds": 5,
+      "durationInSeconds": 6,
       "src": "yapay-zeka.mp4",
       "startFromInSeconds": 5,
       "motion": "out",
@@ -71,5 +70,18 @@
       "promise": "Her gün 3 teknoloji sorusu",
       "cta": "Kanal ikonuna dokun"
     }
-  ]
+  ],
+  "youtube": {
+    "title": "RTX 5060 yapay zeka için yeterli mi?",
+    "description": "Sınırı kartın hızı değil belleği koyar. 8 GB VRAM ile 7 milyarlık model rahat çalışır, 13 milyarlık tam sınırda, 30 milyarlık hiç çalışmaz.\n\nHer gün 3 teknoloji sorusu.\nSıradaki: SSD takarken nereye dikkat etmeli?",
+    "tags": [
+      "rtx 5060",
+      "ekran kartı",
+      "vram",
+      "yapay zeka",
+      "yerel model",
+      "nvidia",
+      "donanım"
+    ]
+  }
 }

@@ -8,11 +8,9 @@
     "type": "aurora"
   },
   "lexicon": {
-    "X3D": "iks üç di",
-    "1080p": "bin seksen pi",
-    "4K": "dört ka"
+    "X3D": "iks üç di"
   },
-  "narration": "X3D işlemci normalinden pahalı. Gerçekten fark ediyor mu? Cevap ekran kartına bağlı. X3D'nin yaptığı tek bir şey var: işlemcinin üstüne fazladan önbellek koyuyor. Oyunun sık kullandığı veri bu önbellekte kalırsa işlemci sistem belleğine hiç gitmiyor. Sonuç, 1080p'de ve işlemcinin sınırladığı oyunlarda yüzde on ile yirmi arası kazanç. Ama 4K'da oyunu sınırlayan işlemci değil, ekran kartı. Orada fark neredeyse sıfıra iniyor. Video render ederken kazancı hiç yok. Yani soru X3D iyi mi değil. Soru şu: senin darboğazın işlemcide mi? Yarın: RTX 5060 yapay zeka için yeterli mi?",
+  "narration": "X3D işlemci normalinden pahalı. Gerçekten fark ediyor mu? Cevap ekran kartına bağlı. X3D'nin yaptığı tek bir şey var: işlemcinin üstüne fazladan önbellek koyuyor. Oyunun sık kullandığı veri bu önbellekte kalırsa işlemci sistem belleğine hiç gitmiyor. Sonuç, 1080p çözünürlükte ve işlemcinin sınırladığı oyunlarda yüzde on ile yirmi arası kazanç. Ama 4K çözünürlükte oyunu sınırlayan işlemci değil, ekran kartı. Orada fark neredeyse sıfıra iniyor. Video render ederken kazancı hiç yok. Yani soru X3D iyi mi değil. Soru şu: senin darboğazın işlemcide mi? Yarın: RTX 5060 yapay zeka için yeterli mi?",
   "scenes": [
     {
       "type": "broll",
@@ -52,7 +50,11 @@
           "label": "video render"
         }
       ],
-      "revealAtSeconds": [1.5, 4.5, 7]
+      "revealAtSeconds": [
+        1.5,
+        4.5,
+        7
+      ]
     },
     {
       "type": "broll",
@@ -72,5 +74,19 @@
       "promise": "Her gün 3 teknoloji sorusu",
       "cta": "Kanal ikonuna dokun"
     }
-  ]
+  ],
+  "youtube": {
+    "title": "X3D işlemci oyunda gerçekten fark eder mi?",
+    "description": "X3D işlemcinin tek yaptığı şey var: işlemcinin üstüne fazladan önbellek koymak. Kazanç 1080p'de %10-20, 4K'da neredeyse sıfır, video render'da hiç yok.\n\nSoru X3D iyi mi değil — senin darboğazın nerede?\n\nHer gün 3 teknoloji sorusu.\nSıradaki: RTX 5060 yapay zeka için yeterli mi?",
+    "tags": [
+      "x3d",
+      "işlemci",
+      "amd",
+      "ryzen",
+      "oyun bilgisayarı",
+      "fps",
+      "donanım",
+      "pc toplama"
+    ]
+  }
 }

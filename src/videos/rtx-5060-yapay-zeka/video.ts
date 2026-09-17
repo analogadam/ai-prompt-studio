@@ -13,8 +13,7 @@ const video: VideoData = {
     {
       "type": "broll",
       "durationInSeconds": 10.3,
-      "src": "rtx-5060-yapay-zeka/ekran-karti.mp4",
-      "startFromInSeconds": 2,
+      "src": "rtx-5060-yapay-zeka/bellek.mp4",
       "motion": "in",
       "caption": "Sınırı hız değil bellek koyar",
       "highlight": "bellek"
@@ -48,15 +47,15 @@ const video: VideoData = {
     },
     {
       "type": "broll",
-      "durationInSeconds": 7.733333333333333,
-      "src": "rtx-5060-yapay-zeka/bellek.mp4",
+      "durationInSeconds": 6.433333333333334,
+      "src": "rtx-5060-yapay-zeka/ekran-karti.mp4",
       "motion": "left",
       "caption": "13B tam sınırda",
       "highlight": "sınırda"
     },
     {
       "type": "broll",
-      "durationInSeconds": 6.433333333333334,
+      "durationInSeconds": 7.733333333333333,
       "src": "rtx-5060-yapay-zeka/yapay-zeka.mp4",
       "startFromInSeconds": 5,
       "motion": "out",

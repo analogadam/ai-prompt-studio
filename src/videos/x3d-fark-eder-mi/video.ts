@@ -12,7 +12,7 @@ const video: VideoData = {
   "scenes": [
     {
       "type": "broll",
-      "durationInSeconds": 10.333333333333334,
+      "durationInSeconds": 10.6,
       "src": "x3d-fark-eder-mi/islemci.mp4",
       "motion": "in",
       "caption": "Tek yaptığı fazladan önbellek",
@@ -20,7 +20,7 @@ const video: VideoData = {
     },
     {
       "type": "broll",
-      "durationInSeconds": 9.033333333333333,
+      "durationInSeconds": 9.266666666666667,
       "src": "x3d-fark-eder-mi/oyun-ekrani.mp4",
       "startFromInSeconds": 3,
       "motion": "left",
@@ -29,7 +29,7 @@ const video: VideoData = {
     },
     {
       "type": "stats",
-      "durationInSeconds": 14.2,
+      "durationInSeconds": 14.566666666666666,
       "heading": "X3D kazancı nerede?",
       "stats": [
         {
@@ -49,14 +49,14 @@ const video: VideoData = {
         }
       ],
       "revealAtSeconds": [
-        1.9333333333333333,
-        5.8,
-        9.033333333333333
+        2,
+        5.966666666666667,
+        9.266666666666667
       ]
     },
     {
       "type": "broll",
-      "durationInSeconds": 6.466666666666667,
+      "durationInSeconds": 6.633333333333334,
       "src": "x3d-fark-eder-mi/render.mp4",
       "startFromInSeconds": 4,
       "motion": "out",
@@ -66,7 +66,7 @@ const video: VideoData = {
     },
     {
       "type": "outro",
-      "durationInSeconds": 9.7,
+      "durationInSeconds": 9.933333333333334,
       "summary": "Soru X3D iyi mi değil. Darboğazın nerede?",
       "next": "RTX 5060 yapay zeka için yeterli mi?",
       "promise": "Her gün 3 teknoloji sorusu",

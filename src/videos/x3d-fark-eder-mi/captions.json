@@ -247,358 +247,372 @@
   {
     "text": " Sonuç",
     "startMs": 20613,
-    "endMs": 21321,
+    "endMs": 21333,
     "timestampMs": 20613,
     "confidence": 1
   },
   {
-    "text": " 1080p'de",
-    "startMs": 21321,
-    "endMs": 22170,
-    "timestampMs": 21321,
+    "text": " 1080p",
+    "startMs": 21333,
+    "endMs": 22064,
+    "timestampMs": 21333,
+    "confidence": 1
+  },
+  {
+    "text": " çözünürlükte",
+    "startMs": 22064,
+    "endMs": 22783,
+    "timestampMs": 22064,
     "confidence": 1
   },
   {
     "text": " ve",
-    "startMs": 22170,
-    "endMs": 22276,
-    "timestampMs": 22170,
+    "startMs": 22783,
+    "endMs": 22877,
+    "timestampMs": 22783,
     "confidence": 1
   },
   {
     "text": " işlemcinin",
-    "startMs": 22276,
-    "endMs": 22960,
-    "timestampMs": 22276,
+    "startMs": 22877,
+    "endMs": 23573,
+    "timestampMs": 22877,
     "confidence": 1
   },
   {
     "text": " sınırladığı",
-    "startMs": 22960,
-    "endMs": 23526,
-    "timestampMs": 22960,
+    "startMs": 23573,
+    "endMs": 24127,
+    "timestampMs": 23573,
     "confidence": 1
   },
   {
     "text": " oyunlarda",
-    "startMs": 23526,
-    "endMs": 24127,
-    "timestampMs": 23526,
-    "confidence": 1
-  },
-  {
-    "text": " yüzde",
     "startMs": 24127,
-    "endMs": 24446,
+    "endMs": 24717,
     "timestampMs": 24127,
     "confidence": 1
   },
   {
+    "text": " yüzde",
+    "startMs": 24717,
+    "endMs": 25047,
+    "timestampMs": 24717,
+    "confidence": 1
+  },
+  {
     "text": " on",
-    "startMs": 24446,
-    "endMs": 24646,
-    "timestampMs": 24446,
+    "startMs": 25047,
+    "endMs": 25248,
+    "timestampMs": 25047,
     "confidence": 1
   },
   {
     "text": " ile",
-    "startMs": 24646,
-    "endMs": 24823,
-    "timestampMs": 24646,
+    "startMs": 25248,
+    "endMs": 25425,
+    "timestampMs": 25248,
     "confidence": 1
   },
   {
     "text": " yirmi",
-    "startMs": 24823,
-    "endMs": 25071,
-    "timestampMs": 24823,
+    "startMs": 25425,
+    "endMs": 25672,
+    "timestampMs": 25425,
     "confidence": 1
   },
   {
     "text": " arası",
-    "startMs": 25071,
-    "endMs": 25366,
-    "timestampMs": 25071,
+    "startMs": 25672,
+    "endMs": 25979,
+    "timestampMs": 25672,
     "confidence": 1
   },
   {
     "text": " kazanç",
-    "startMs": 25366,
-    "endMs": 26899,
-    "timestampMs": 25366,
+    "startMs": 25979,
+    "endMs": 27500,
+    "timestampMs": 25979,
     "confidence": 1
   },
   {
     "text": " Ama",
-    "startMs": 26899,
-    "endMs": 27300,
-    "timestampMs": 26899,
+    "startMs": 27500,
+    "endMs": 27913,
+    "timestampMs": 27500,
     "confidence": 1
   },
   {
-    "text": " 4K'da",
-    "startMs": 27300,
-    "endMs": 27759,
-    "timestampMs": 27300,
+    "text": " 4K",
+    "startMs": 27913,
+    "endMs": 28337,
+    "timestampMs": 27913,
+    "confidence": 1
+  },
+  {
+    "text": " çözünürlükte",
+    "startMs": 28337,
+    "endMs": 29021,
+    "timestampMs": 28337,
     "confidence": 1
   },
   {
     "text": " oyunu",
-    "startMs": 27759,
-    "endMs": 28078,
-    "timestampMs": 27759,
+    "startMs": 29021,
+    "endMs": 29316,
+    "timestampMs": 29021,
     "confidence": 1
   },
   {
     "text": " sınırlayan",
-    "startMs": 28078,
-    "endMs": 28608,
-    "timestampMs": 28078,
+    "startMs": 29316,
+    "endMs": 29847,
+    "timestampMs": 29316,
     "confidence": 1
   },
   {
     "text": " işlemci",
-    "startMs": 28608,
-    "endMs": 29068,
-    "timestampMs": 28608,
+    "startMs": 29847,
+    "endMs": 30295,
+    "timestampMs": 29847,
     "confidence": 1
   },
   {
     "text": " değil",
-    "startMs": 29068,
-    "endMs": 29564,
-    "timestampMs": 29068,
+    "startMs": 30295,
+    "endMs": 30790,
+    "timestampMs": 30295,
     "confidence": 1
   },
   {
     "text": " ekran",
-    "startMs": 29564,
-    "endMs": 29906,
-    "timestampMs": 29564,
+    "startMs": 30790,
+    "endMs": 31132,
+    "timestampMs": 30790,
     "confidence": 1
   },
   {
     "text": " kartı",
-    "startMs": 29906,
-    "endMs": 31403,
-    "timestampMs": 29906,
+    "startMs": 31132,
+    "endMs": 32665,
+    "timestampMs": 31132,
     "confidence": 1
   },
   {
     "text": " Orada",
-    "startMs": 31403,
-    "endMs": 31969,
-    "timestampMs": 31403,
+    "startMs": 32665,
+    "endMs": 33231,
+    "timestampMs": 32665,
     "confidence": 1
   },
   {
     "text": " fark",
-    "startMs": 31969,
-    "endMs": 32288,
-    "timestampMs": 31969,
+    "startMs": 33231,
+    "endMs": 33550,
+    "timestampMs": 33231,
     "confidence": 1
   },
   {
     "text": " neredeyse",
-    "startMs": 32288,
-    "endMs": 32854,
-    "timestampMs": 32288,
+    "startMs": 33550,
+    "endMs": 34116,
+    "timestampMs": 33550,
     "confidence": 1
   },
   {
     "text": " sıfıra",
-    "startMs": 32854,
-    "endMs": 33208,
-    "timestampMs": 32854,
+    "startMs": 34116,
+    "endMs": 34469,
+    "timestampMs": 34116,
     "confidence": 1
   },
   {
     "text": " iniyor",
-    "startMs": 33208,
-    "endMs": 34717,
-    "timestampMs": 33208,
+    "startMs": 34469,
+    "endMs": 35979,
+    "timestampMs": 34469,
     "confidence": 1
   },
   {
     "text": " Video",
-    "startMs": 34717,
-    "endMs": 35153,
-    "timestampMs": 34717,
+    "startMs": 35979,
+    "endMs": 36415,
+    "timestampMs": 35979,
     "confidence": 1
   },
   {
     "text": " render",
-    "startMs": 35153,
-    "endMs": 35484,
-    "timestampMs": 35153,
+    "startMs": 36415,
+    "endMs": 36745,
+    "timestampMs": 36415,
     "confidence": 1
   },
   {
     "text": " ederken",
-    "startMs": 35484,
-    "endMs": 35955,
-    "timestampMs": 35484,
+    "startMs": 36745,
+    "endMs": 37217,
+    "timestampMs": 36745,
     "confidence": 1
   },
   {
     "text": " kazancı",
-    "startMs": 35955,
-    "endMs": 36450,
-    "timestampMs": 35955,
+    "startMs": 37217,
+    "endMs": 37712,
+    "timestampMs": 37217,
     "confidence": 1
   },
   {
     "text": " hiç",
-    "startMs": 36450,
-    "endMs": 36675,
-    "timestampMs": 36450,
+    "startMs": 37712,
+    "endMs": 37936,
+    "timestampMs": 37712,
     "confidence": 1
   },
   {
     "text": " yok",
-    "startMs": 36675,
-    "endMs": 38007,
-    "timestampMs": 36675,
+    "startMs": 37936,
+    "endMs": 39269,
+    "timestampMs": 37936,
     "confidence": 1
   },
   {
     "text": " Yani",
-    "startMs": 38007,
-    "endMs": 38550,
-    "timestampMs": 38007,
+    "startMs": 39269,
+    "endMs": 39811,
+    "timestampMs": 39269,
     "confidence": 1
   },
   {
     "text": " soru",
-    "startMs": 38550,
-    "endMs": 38844,
-    "timestampMs": 38550,
-    "confidence": 1
-  },
-  {
-    "text": " X3D",
-    "startMs": 38844,
-    "endMs": 39493,
-    "timestampMs": 38844,
-    "confidence": 1
-  },
-  {
-    "text": " iyi",
-    "startMs": 39493,
-    "endMs": 39705,
-    "timestampMs": 39493,
-    "confidence": 1
-  },
-  {
-    "text": " mi",
-    "startMs": 39705,
-    "endMs": 39811,
-    "timestampMs": 39705,
-    "confidence": 1
-  },
-  {
-    "text": " değil",
     "startMs": 39811,
-    "endMs": 41238,
+    "endMs": 40106,
     "timestampMs": 39811,
     "confidence": 1
   },
   {
+    "text": " X3D",
+    "startMs": 40106,
+    "endMs": 40755,
+    "timestampMs": 40106,
+    "confidence": 1
+  },
+  {
+    "text": " iyi",
+    "startMs": 40755,
+    "endMs": 40967,
+    "timestampMs": 40755,
+    "confidence": 1
+  },
+  {
+    "text": " mi",
+    "startMs": 40967,
+    "endMs": 41073,
+    "timestampMs": 40967,
+    "confidence": 1
+  },
+  {
+    "text": " değil",
+    "startMs": 41073,
+    "endMs": 42500,
+    "timestampMs": 41073,
+    "confidence": 1
+  },
+  {
     "text": " Soru",
-    "startMs": 41238,
-    "endMs": 41580,
-    "timestampMs": 41238,
+    "startMs": 42500,
+    "endMs": 42842,
+    "timestampMs": 42500,
     "confidence": 1
   },
   {
     "text": " şu",
-    "startMs": 41580,
-    "endMs": 41958,
-    "timestampMs": 41580,
+    "startMs": 42842,
+    "endMs": 43219,
+    "timestampMs": 42842,
     "confidence": 1
   },
   {
     "text": " senin",
-    "startMs": 41958,
-    "endMs": 42300,
-    "timestampMs": 41958,
+    "startMs": 43219,
+    "endMs": 43561,
+    "timestampMs": 43219,
     "confidence": 1
   },
   {
     "text": " darboğazın",
-    "startMs": 42300,
-    "endMs": 42889,
-    "timestampMs": 42300,
+    "startMs": 43561,
+    "endMs": 44151,
+    "timestampMs": 43561,
     "confidence": 1
   },
   {
     "text": " işlemcide",
-    "startMs": 42889,
-    "endMs": 43502,
-    "timestampMs": 42889,
+    "startMs": 44151,
+    "endMs": 44764,
+    "timestampMs": 44151,
     "confidence": 1
   },
   {
     "text": " mi",
-    "startMs": 43502,
-    "endMs": 44717,
-    "timestampMs": 43502,
+    "startMs": 44764,
+    "endMs": 45979,
+    "timestampMs": 44764,
     "confidence": 1
   },
   {
     "text": " Yarın",
-    "startMs": 44717,
-    "endMs": 45342,
-    "timestampMs": 44717,
+    "startMs": 45979,
+    "endMs": 46604,
+    "timestampMs": 45979,
     "confidence": 1
   },
   {
     "text": " RTX",
-    "startMs": 45342,
-    "endMs": 45908,
-    "timestampMs": 45342,
+    "startMs": 46604,
+    "endMs": 47170,
+    "timestampMs": 46604,
     "confidence": 1
   },
   {
     "text": " 5060",
-    "startMs": 45908,
-    "endMs": 46675,
-    "timestampMs": 45908,
+    "startMs": 47170,
+    "endMs": 47936,
+    "timestampMs": 47170,
     "confidence": 1
   },
   {
     "text": " yapay",
-    "startMs": 46675,
-    "endMs": 46958,
-    "timestampMs": 46675,
+    "startMs": 47936,
+    "endMs": 48219,
+    "timestampMs": 47936,
     "confidence": 1
   },
   {
     "text": " zeka",
-    "startMs": 46958,
-    "endMs": 47288,
-    "timestampMs": 46958,
+    "startMs": 48219,
+    "endMs": 48550,
+    "timestampMs": 48219,
     "confidence": 1
   },
   {
     "text": " için",
-    "startMs": 47288,
-    "endMs": 47524,
-    "timestampMs": 47288,
+    "startMs": 48550,
+    "endMs": 48785,
+    "timestampMs": 48550,
     "confidence": 1
   },
   {
     "text": " yeterli",
-    "startMs": 47524,
-    "endMs": 47984,
-    "timestampMs": 47524,
+    "startMs": 48785,
+    "endMs": 49245,
+    "timestampMs": 48785,
     "confidence": 1
   },
   {
     "text": " mi",
-    "startMs": 47984,
-    "endMs": 48113,
-    "timestampMs": 47984,
+    "startMs": 49245,
+    "endMs": 49375,
+    "timestampMs": 49245,
     "confidence": 1
   }
 ]

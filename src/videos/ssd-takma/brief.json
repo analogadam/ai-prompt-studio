@@ -62,5 +62,18 @@
       "promise": "Her gün 3 teknoloji sorusu",
       "cta": "Kanal ikonuna dokun"
     }
-  ]
+  ],
+  "youtube": {
+    "title": "SSD takarken nereye dikkat etmeli?",
+    "description": "Üç kontrol: yuva SATA mı NVMe mi, boyut 2280 mi, ekran kartıyla hat paylaşımı var mı. Bir de soğutucu — ısınan NVMe kendini yavaşlatıyor.\n\nKılavuza bakmak beş dakika, yanlış yuva bir akşam.\n\nHer gün 3 teknoloji sorusu.\nSıradaki: X3D işlemci oyunda fark eder mi?",
+    "tags": [
+      "ssd",
+      "nvme",
+      "m.2",
+      "anakart",
+      "pc toplama",
+      "donanım",
+      "bilgisayar"
+    ]
+  }
 }

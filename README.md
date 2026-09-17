@@ -73,6 +73,45 @@ neden elendigi yazilir; filtre fazla sikiysa liste sessizce bosalmasin.
 Kota: her arama 100 birim, gunluk ucretsiz kota 10.000 birim. Varsayilan 10 arama
 gunde 1.000 birim harcar.
 
+## Yukleme
+
+```bash
+node scripts/upload.mjs --login                 # bir kereye mahsus izin
+node scripts/upload.mjs ornek                   # gizli olarak yukler
+node scripts/upload.mjs ornek --privacy public
+node scripts/upload.mjs ornek --publish-at 2026-09-18T18:00:00Z
+```
+
+Yukleme API anahtariyla olmaz; kanal sahibinin OAuth izni gerekir. Google Cloud
+Console'da ayni projede **OAuth client ID > Desktop app** olusturulur, `.env`
+icine `YOUTUBE_CLIENT_ID` ve `YOUTUBE_CLIENT_SECRET` yazilir, sonra `--login`
+bir kere calistirilir; uretilen `YOUTUBE_REFRESH_TOKEN` .env'e kaydedilir ve
+sonraki yuklemeler sormadan calisir.
+
+Yuklenen video `src/videos/<slug>/upload.json` dosyasina yazilir; ayni video
+ikinci kez yuklenmez. Baslik ve aciklama brief'in `youtube` alanindan gelir.
+
+Kota: yukleme 1.600 birim, gunluk ucretsiz kota 10.000 birim.
+
+## Telaffuz denetimi
+
+```bash
+node scripts/check-lexicon.mjs --terms SSD,HDD,USB
+```
+
+Sozlukteki okunus seslendirilir, cikan ses Whisper'a (Turkce) dinletilir ve
+modelin ne yazdigina bakilir; ayni olcum ham yazim icin de yapilir. Boylece
+"SSD nasil okunur" sorusu tahminle degil olcumle cevaplanir. Olcum bu hatalari
+yakaladi: `1080p` kurali yokken "bin seksen pe", `4K` "dort kagit" okunuyordu;
+`1080p'de` yazimi ise "pide" gibi duyuluyordu (bu yuzden metinde "1080p
+cozunurlukte" yazilir).
+
+Model tek kelimelik kayitta zayif oldugu icin olcum tasiyici cumleyle yapilir.
+Yine de varsayilan `base` modeli kaba hatalari yakalar ("pide", "dort kagit"),
+ince ayrimlari (mesela "iks uc di" ile "eks uc di") ayirt edemez; o durumda
+`WHISPER_MODEL=medium node scripts/check-lexicon.mjs ...` gerekir (~1.5 GB).
+Sonuc kanit degil isarettir; son karar insanindir.
+
 ## Yardimci komutlar
 
 | Komut | Ne yapar |
@@ -80,6 +119,8 @@ gunde 1.000 birim harcar.
 | `npm run dev` | Remotion Studio -- canli onizleme |
 | `node scripts/fetch-broll.mjs "arama" <slug> <klip-adi>` | Pexels'ten dikey b-roll indirir, `public/<slug>/` altina koyar |
 | `node scripts/discover.mjs` | Nisdeki patlayan videolardan konu havuzu cikarir |
+| `node scripts/upload.mjs <slug>` | Render'i YouTube'a yukler (varsayilan: gizli) |
+| `node scripts/check-lexicon.mjs` | Telaffuz sozlugunu Whisper'a dinletip sinar |
 | `node scripts/build-registry.mjs` | `src/videos/index.ts`'i yeniden uretir |
 | `npx remotion still <Kimlik> out/kontrol.png --frame=60` | Tek kare (hizli gorsel kontrol) |
 | `node scripts/transcribe.mjs public/ses.mp4` | Disaridan gelen kayittan altyazi |
@@ -104,7 +145,10 @@ topics/            gunluk konu havuzlari
 scripts/
   produce.mjs      uctan uca uretim
   discover.mjs     konu kesfi (YouTube Data API)
+  upload.mjs       YouTube'a yukleme (OAuth)
+  check-lexicon.mjs telaffuz denetimi (TTS -> Whisper)
   env.mjs          .env icindeki API anahtarlarini okur
+  text.mjs         Turkce kelime siniri, ek ve buyuk/kucuk harf kurallari
   lexicon.mjs      telaffuz sozlugu (VRAM -> "vi ram")
   fetch-broll.mjs  Pexels'ten klip indirme
   build-registry.mjs

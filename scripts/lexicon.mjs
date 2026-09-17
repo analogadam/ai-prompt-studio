@@ -66,6 +66,12 @@ export const lexicon = {
   YouTube: "yutup",
   Windows: "vindovs",
 
+  // Cozunurluk: edge-tts "1080p"yi "bin seksen pe", "4K"yi "dort kagit" diye
+  // okuyor. Okunuslar olculerek secildi (scripts/check-lexicon.mjs).
+  "1080p": "bin seksen pi",
+  "1440p": "bin dört yüz kırk pi",
+  "4K": "dört kei",
+
   // Metinde acik yazilan olcu birimleri: Turkce'de "giga" yumusak soylenir,
   // edge-tts ise sert G ile okur.
   gigabayt: "cigabayt",

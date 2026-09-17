@@ -134,17 +134,42 @@ await downloadWhisperModel({ model: MODEL, folder: WHISPER_PATH });
 
 const workDir = fs.mkdtempSync(path.join(os.tmpdir(), "lexicon-"));
 const results = [];
+let step = 0;
+
+/**
+ * Terim tek basina degil cumle icinde denenir.
+ *
+ * Tek kelimelik kayitta konusma tanima modeli baglamsiz kaliyor ve dogru
+ * okunusu bile taniyamiyor ("es es di" -> "Eseste"). Ayni okunus cumle
+ * icinde dogru yaziliyor; olcum bu yuzden cumleyle yapilir.
+ */
+const carrier = (text) => "Bilgisayarda " + text + " meselesine bakalım.";
+
+const hears = async (text) => {
+  const heard = await listen(synthesize(carrier(text), voice, workDir, step++));
+  process.stdout.write(".");
+  // Tasiyici cumlenin kelimeleri sonuctan atilir, geriye terim kalir.
+  return heard
+    .replace(/bilgisayarda/i, "")
+    .replace(/meselesine bakalım\.?/i, "")
+    .trim();
+};
 
 try {
-  for (const [index, [term, reading]] of entries.entries()) {
-    const heard = await listen(synthesize(reading, voice, workDir, index));
+  for (const [term, reading] of entries) {
+    // Sozlukteki okunus ile ham yazim yan yana denenir: bazen edge-tts'in
+    // kendi okuyusu zaten dogrudur ve kural fazladan bozar ("1080p").
+    const withReading = await hears(reading);
+    const withoutReading = await hears(term);
+
     results.push({
       term,
       reading,
-      heard,
-      ok: bareForm(heard) === bareForm(term),
+      withReading,
+      withoutReading,
+      readingOk: bareForm(withReading).includes(bareForm(term)),
+      rawOk: bareForm(withoutReading).includes(bareForm(term)),
     });
-    process.stdout.write(".");
   }
 } finally {
   fs.rmSync(workDir, { recursive: true, force: true });
@@ -152,22 +177,37 @@ try {
 
 const column = (text, width) => String(text).padEnd(width).slice(0, width);
 
-console.log("\n\n  terim      okunus            Whisper ne duydu");
-console.log("  " + "-".repeat(70));
-for (const { term, reading, heard, ok } of results) {
+console.log(
+  "\n\n  terim      okunus            okunusla duyulan     ham yaziyla duyulan",
+);
+console.log("  " + "-".repeat(86));
+for (const result of results) {
+  const mark = result.readingOk ? "+ " : result.rawOk ? "> " : "! ";
   console.log(
-    "  " + (ok ? "+ " : "! ") + column(term, 9) + column(reading, 18) + heard,
+    "  " +
+      mark +
+      column(result.term, 9) +
+      column(result.reading, 18) +
+      column(result.withReading, 21) +
+      result.withoutReading,
   );
 }
 
-const failed = results.filter((result) => !result.ok);
+const better = results.filter((result) => !result.readingOk && result.rawOk);
+const neither = results.filter((result) => !result.readingOk && !result.rawOk);
+
 console.log(
-  "\n" +
-    (results.length - failed.length) +
-    "/" +
-    results.length +
-    " terim tanindi." +
-    (failed.length
-      ? " Bakilacaklar: " + failed.map((result) => result.term).join(", ")
-      : ""),
+  "\n  +  okunus taninmis   >  ham yazim daha iyi   !  ikisi de taninmamis\n",
 );
+if (better.length) {
+  console.log(
+    "Kural kaldirilmali (edge-tts zaten dogru okuyor): " +
+      better.map((result) => result.term).join(", "),
+  );
+}
+if (neither.length) {
+  console.log(
+    "Elle bakilmali (model ikisini de tanimadi, sonuc kesin degil): " +
+      neither.map((result) => result.term).join(", "),
+  );
+}
