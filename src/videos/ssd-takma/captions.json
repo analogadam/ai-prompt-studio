@@ -1,0 +1,611 @@
+[
+  {
+    "text": "SSD",
+    "startMs": 97,
+    "endMs": 805,
+    "timestampMs": 97,
+    "confidence": 1
+  },
+  {
+    "text": " aldın",
+    "startMs": 805,
+    "endMs": 1371,
+    "timestampMs": 805,
+    "confidence": 1
+  },
+  {
+    "text": " takmadan",
+    "startMs": 1371,
+    "endMs": 1866,
+    "timestampMs": 1371,
+    "confidence": 1
+  },
+  {
+    "text": " önce",
+    "startMs": 1866,
+    "endMs": 2137,
+    "timestampMs": 1866,
+    "confidence": 1
+  },
+  {
+    "text": " üç",
+    "startMs": 2137,
+    "endMs": 2291,
+    "timestampMs": 2137,
+    "confidence": 1
+  },
+  {
+    "text": " şeye",
+    "startMs": 2291,
+    "endMs": 2562,
+    "timestampMs": 2291,
+    "confidence": 1
+  },
+  {
+    "text": " bak",
+    "startMs": 2562,
+    "endMs": 3880,
+    "timestampMs": 2562,
+    "confidence": 1
+  },
+  {
+    "text": " Bir",
+    "startMs": 3880,
+    "endMs": 4281,
+    "timestampMs": 3880,
+    "confidence": 1
+  },
+  {
+    "text": " anakarttaki",
+    "startMs": 4281,
+    "endMs": 4988,
+    "timestampMs": 4281,
+    "confidence": 1
+  },
+  {
+    "text": " M2",
+    "startMs": 4988,
+    "endMs": 5377,
+    "timestampMs": 4988,
+    "confidence": 1
+  },
+  {
+    "text": " yuvası",
+    "startMs": 5377,
+    "endMs": 5766,
+    "timestampMs": 5377,
+    "confidence": 1
+  },
+  {
+    "text": " her",
+    "startMs": 5766,
+    "endMs": 6002,
+    "timestampMs": 5766,
+    "confidence": 1
+  },
+  {
+    "text": " diski",
+    "startMs": 6002,
+    "endMs": 6285,
+    "timestampMs": 6002,
+    "confidence": 1
+  },
+  {
+    "text": " kabul",
+    "startMs": 6285,
+    "endMs": 6592,
+    "timestampMs": 6285,
+    "confidence": 1
+  },
+  {
+    "text": " etmiyor",
+    "startMs": 6592,
+    "endMs": 8184,
+    "timestampMs": 6592,
+    "confidence": 1
+  },
+  {
+    "text": " Bazı",
+    "startMs": 8184,
+    "endMs": 8809,
+    "timestampMs": 8184,
+    "confidence": 1
+  },
+  {
+    "text": " yuvalar",
+    "startMs": 8809,
+    "endMs": 9210,
+    "timestampMs": 8809,
+    "confidence": 1
+  },
+  {
+    "text": " sadece",
+    "startMs": 9210,
+    "endMs": 9717,
+    "timestampMs": 9210,
+    "confidence": 1
+  },
+  {
+    "text": " SATA",
+    "startMs": 9717,
+    "endMs": 9976,
+    "timestampMs": 9717,
+    "confidence": 1
+  },
+  {
+    "text": " çalışıyor",
+    "startMs": 9976,
+    "endMs": 10778,
+    "timestampMs": 9976,
+    "confidence": 1
+  },
+  {
+    "text": " oraya",
+    "startMs": 10778,
+    "endMs": 11108,
+    "timestampMs": 10778,
+    "confidence": 1
+  },
+  {
+    "text": " NVMe",
+    "startMs": 11108,
+    "endMs": 11710,
+    "timestampMs": 11108,
+    "confidence": 1
+  },
+  {
+    "text": " disk",
+    "startMs": 11710,
+    "endMs": 11958,
+    "timestampMs": 11710,
+    "confidence": 1
+  },
+  {
+    "text": " takarsan",
+    "startMs": 11958,
+    "endMs": 12500,
+    "timestampMs": 11958,
+    "confidence": 1
+  },
+  {
+    "text": " sistem",
+    "startMs": 12500,
+    "endMs": 12936,
+    "timestampMs": 12500,
+    "confidence": 1
+  },
+  {
+    "text": " diski",
+    "startMs": 12936,
+    "endMs": 13208,
+    "timestampMs": 12936,
+    "confidence": 1
+  },
+  {
+    "text": " hiç",
+    "startMs": 13208,
+    "endMs": 13361,
+    "timestampMs": 13208,
+    "confidence": 1
+  },
+  {
+    "text": " görmüyor",
+    "startMs": 13361,
+    "endMs": 15000,
+    "timestampMs": 13361,
+    "confidence": 1
+  },
+  {
+    "text": " İki",
+    "startMs": 15000,
+    "endMs": 15389,
+    "timestampMs": 15000,
+    "confidence": 1
+  },
+  {
+    "text": " boyut",
+    "startMs": 15389,
+    "endMs": 16792,
+    "timestampMs": 15389,
+    "confidence": 1
+  },
+  {
+    "text": " Masaüstünde",
+    "startMs": 16792,
+    "endMs": 17642,
+    "timestampMs": 16792,
+    "confidence": 1
+  },
+  {
+    "text": " genelde",
+    "startMs": 17642,
+    "endMs": 18078,
+    "timestampMs": 17642,
+    "confidence": 1
+  },
+  {
+    "text": " 2280",
+    "startMs": 18078,
+    "endMs": 18927,
+    "timestampMs": 18078,
+    "confidence": 1
+  },
+  {
+    "text": " uyuyor",
+    "startMs": 18927,
+    "endMs": 19481,
+    "timestampMs": 18927,
+    "confidence": 1
+  },
+  {
+    "text": " dizüstünde",
+    "startMs": 19481,
+    "endMs": 20071,
+    "timestampMs": 19481,
+    "confidence": 1
+  },
+  {
+    "text": " daha",
+    "startMs": 20071,
+    "endMs": 20295,
+    "timestampMs": 20071,
+    "confidence": 1
+  },
+  {
+    "text": " kısa",
+    "startMs": 20295,
+    "endMs": 20566,
+    "timestampMs": 20295,
+    "confidence": 1
+  },
+  {
+    "text": " yuva",
+    "startMs": 20566,
+    "endMs": 20766,
+    "timestampMs": 20566,
+    "confidence": 1
+  },
+  {
+    "text": " çıkabiliyor",
+    "startMs": 20766,
+    "endMs": 22524,
+    "timestampMs": 20766,
+    "confidence": 1
+  },
+  {
+    "text": " Üç",
+    "startMs": 22524,
+    "endMs": 22901,
+    "timestampMs": 22524,
+    "confidence": 1
+  },
+  {
+    "text": " ikinci",
+    "startMs": 22901,
+    "endMs": 23290,
+    "timestampMs": 22901,
+    "confidence": 1
+  },
+  {
+    "text": " M2",
+    "startMs": 23290,
+    "endMs": 23644,
+    "timestampMs": 23290,
+    "confidence": 1
+  },
+  {
+    "text": " yuvası",
+    "startMs": 23644,
+    "endMs": 23998,
+    "timestampMs": 23644,
+    "confidence": 1
+  },
+  {
+    "text": " çoğu",
+    "startMs": 23998,
+    "endMs": 24245,
+    "timestampMs": 23998,
+    "confidence": 1
+  },
+  {
+    "text": " anakartta",
+    "startMs": 24245,
+    "endMs": 24847,
+    "timestampMs": 24245,
+    "confidence": 1
+  },
+  {
+    "text": " ekran",
+    "startMs": 24847,
+    "endMs": 25224,
+    "timestampMs": 24847,
+    "confidence": 1
+  },
+  {
+    "text": " kartıyla",
+    "startMs": 25224,
+    "endMs": 25755,
+    "timestampMs": 25224,
+    "confidence": 1
+  },
+  {
+    "text": " aynı",
+    "startMs": 25755,
+    "endMs": 26050,
+    "timestampMs": 25755,
+    "confidence": 1
+  },
+  {
+    "text": " hattı",
+    "startMs": 26050,
+    "endMs": 26321,
+    "timestampMs": 26050,
+    "confidence": 1
+  },
+  {
+    "text": " paylaşıyor",
+    "startMs": 26321,
+    "endMs": 28066,
+    "timestampMs": 26321,
+    "confidence": 1
+  },
+  {
+    "text": " Oraya",
+    "startMs": 28066,
+    "endMs": 28620,
+    "timestampMs": 28066,
+    "confidence": 1
+  },
+  {
+    "text": " disk",
+    "startMs": 28620,
+    "endMs": 28856,
+    "timestampMs": 28620,
+    "confidence": 1
+  },
+  {
+    "text": " takarsan",
+    "startMs": 28856,
+    "endMs": 29446,
+    "timestampMs": 28856,
+    "confidence": 1
+  },
+  {
+    "text": " ekran",
+    "startMs": 29446,
+    "endMs": 29788,
+    "timestampMs": 29446,
+    "confidence": 1
+  },
+  {
+    "text": " kartı",
+    "startMs": 29788,
+    "endMs": 30271,
+    "timestampMs": 29788,
+    "confidence": 1
+  },
+  {
+    "text": " on",
+    "startMs": 30271,
+    "endMs": 30448,
+    "timestampMs": 30271,
+    "confidence": 1
+  },
+  {
+    "text": " altı",
+    "startMs": 30448,
+    "endMs": 30708,
+    "timestampMs": 30448,
+    "confidence": 1
+  },
+  {
+    "text": " hat",
+    "startMs": 30708,
+    "endMs": 30920,
+    "timestampMs": 30708,
+    "confidence": 1
+  },
+  {
+    "text": " yerine",
+    "startMs": 30920,
+    "endMs": 31215,
+    "timestampMs": 30920,
+    "confidence": 1
+  },
+  {
+    "text": " sekiz",
+    "startMs": 31215,
+    "endMs": 31568,
+    "timestampMs": 31215,
+    "confidence": 1
+  },
+  {
+    "text": " hatta",
+    "startMs": 31568,
+    "endMs": 31875,
+    "timestampMs": 31568,
+    "confidence": 1
+  },
+  {
+    "text": " düşebiliyor",
+    "startMs": 31875,
+    "endMs": 33597,
+    "timestampMs": 31875,
+    "confidence": 1
+  },
+  {
+    "text": " Bir",
+    "startMs": 33597,
+    "endMs": 33986,
+    "timestampMs": 33597,
+    "confidence": 1
+  },
+  {
+    "text": " de",
+    "startMs": 33986,
+    "endMs": 34151,
+    "timestampMs": 33986,
+    "confidence": 1
+  },
+  {
+    "text": " soğutucu",
+    "startMs": 34151,
+    "endMs": 34953,
+    "timestampMs": 34151,
+    "confidence": 1
+  },
+  {
+    "text": " NVMe",
+    "startMs": 34953,
+    "endMs": 35542,
+    "timestampMs": 34953,
+    "confidence": 1
+  },
+  {
+    "text": " ısınınca",
+    "startMs": 35542,
+    "endMs": 35991,
+    "timestampMs": 35542,
+    "confidence": 1
+  },
+  {
+    "text": " kendini",
+    "startMs": 35991,
+    "endMs": 36380,
+    "timestampMs": 35991,
+    "confidence": 1
+  },
+  {
+    "text": " yavaşlatıyor",
+    "startMs": 36380,
+    "endMs": 38219,
+    "timestampMs": 36380,
+    "confidence": 1
+  },
+  {
+    "text": " Kılavuzdaki",
+    "startMs": 38219,
+    "endMs": 38986,
+    "timestampMs": 38219,
+    "confidence": 1
+  },
+  {
+    "text": " tabloya",
+    "startMs": 38986,
+    "endMs": 39422,
+    "timestampMs": 38986,
+    "confidence": 1
+  },
+  {
+    "text": " bakmak",
+    "startMs": 39422,
+    "endMs": 39823,
+    "timestampMs": 39422,
+    "confidence": 1
+  },
+  {
+    "text": " beş",
+    "startMs": 39823,
+    "endMs": 40024,
+    "timestampMs": 39823,
+    "confidence": 1
+  },
+  {
+    "text": " dakika",
+    "startMs": 40024,
+    "endMs": 40389,
+    "timestampMs": 40024,
+    "confidence": 1
+  },
+  {
+    "text": " sürer",
+    "startMs": 40389,
+    "endMs": 40908,
+    "timestampMs": 40389,
+    "confidence": 1
+  },
+  {
+    "text": " yanlış",
+    "startMs": 40908,
+    "endMs": 41368,
+    "timestampMs": 40908,
+    "confidence": 1
+  },
+  {
+    "text": " yuva",
+    "startMs": 41368,
+    "endMs": 41557,
+    "timestampMs": 41368,
+    "confidence": 1
+  },
+  {
+    "text": " bir",
+    "startMs": 41557,
+    "endMs": 41710,
+    "timestampMs": 41557,
+    "confidence": 1
+  },
+  {
+    "text": " akşam",
+    "startMs": 41710,
+    "endMs": 43208,
+    "timestampMs": 41710,
+    "confidence": 1
+  },
+  {
+    "text": " Yarın",
+    "startMs": 43208,
+    "endMs": 43821,
+    "timestampMs": 43208,
+    "confidence": 1
+  },
+  {
+    "text": " X3D",
+    "startMs": 43821,
+    "endMs": 44422,
+    "timestampMs": 43821,
+    "confidence": 1
+  },
+  {
+    "text": " işlemci",
+    "startMs": 44422,
+    "endMs": 44941,
+    "timestampMs": 44422,
+    "confidence": 1
+  },
+  {
+    "text": " oyunda",
+    "startMs": 44941,
+    "endMs": 45283,
+    "timestampMs": 44941,
+    "confidence": 1
+  },
+  {
+    "text": " gerçekten",
+    "startMs": 45283,
+    "endMs": 45896,
+    "timestampMs": 45283,
+    "confidence": 1
+  },
+  {
+    "text": " fark",
+    "startMs": 45896,
+    "endMs": 46179,
+    "timestampMs": 45896,
+    "confidence": 1
+  },
+  {
+    "text": " eder",
+    "startMs": 46179,
+    "endMs": 46462,
+    "timestampMs": 46179,
+    "confidence": 1
+  },
+  {
+    "text": " mi",
+    "startMs": 46462,
+    "endMs": 46604,
+    "timestampMs": 46462,
+    "confidence": 1
+  }
+]

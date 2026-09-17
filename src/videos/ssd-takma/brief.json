@@ -1,0 +1,62 @@
+{
+  "slug": "ssd-takma",
+  "title": "SSD takarken nereye dikkat etmeli",
+  "format": "reels",
+  "voice": "tr-TR-AhmetNeural",
+  "rate": "+6%",
+  "background": {
+    "type": "aurora"
+  },
+  "lexicon": {
+    "M2": "em iki",
+    "2280": "yirmi iki seksen"
+  },
+  "narration": "SSD aldın, takmadan önce üç şeye bak. Bir: anakarttaki M2 yuvası her diski kabul etmiyor. Bazı yuvalar sadece SATA çalışıyor; oraya NVMe disk takarsan sistem diski hiç görmüyor. İki: boyut. Masaüstünde genelde 2280 uyuyor, dizüstünde daha kısa yuva çıkabiliyor. Üç: ikinci M2 yuvası çoğu anakartta ekran kartıyla aynı hattı paylaşıyor. Oraya disk takarsan ekran kartı on altı hat yerine sekiz hatta düşebiliyor. Bir de soğutucu: NVMe ısınınca kendini yavaşlatıyor. Kılavuzdaki tabloya bakmak beş dakika sürer, yanlış yuva bir akşam. Yarın: X3D işlemci oyunda gerçekten fark eder mi?",
+  "scenes": [
+    {
+      "type": "broll",
+      "durationInSeconds": 8,
+      "src": "anakart.mp4",
+      "motion": "in",
+      "caption": "Her yuva aynı değil",
+      "highlight": "yuva"
+    },
+    {
+      "type": "bullets",
+      "durationInSeconds": 11,
+      "heading": "Takmadan önce üç kontrol",
+      "bullets": [
+        "Yuva SATA mı, NVMe mi?",
+        "Boyut 2280 mi?",
+        "Ekran kartıyla hat paylaşımı var mı?"
+      ],
+      "revealAtSeconds": [1.5, 4.5, 7.5]
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 5,
+      "src": "ssd.mp4",
+      "startFromInSeconds": 1,
+      "motion": "left",
+      "caption": "Boyut uymayabilir",
+      "highlight": "Boyut"
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 6,
+      "src": "dizustu.mp4",
+      "startFromInSeconds": 6,
+      "motion": "out",
+      "caption": "Isınan NVMe kendini yavaşlatır",
+      "highlight": "yavaşlatır"
+    },
+    {
+      "type": "outro",
+      "durationInSeconds": 7.5,
+      "summary": "Kılavuza bakmak beş dakika, yanlış yuva bir akşam.",
+      "next": "X3D işlemci oyunda fark eder mi?",
+      "promise": "Her gün 3 teknoloji sorusu",
+      "cta": "Kanal ikonuna dokun"
+    }
+  ]
+}

@@ -1,0 +1,604 @@
+[
+  {
+    "text": "X3D",
+    "startMs": 97,
+    "endMs": 805,
+    "timestampMs": 97,
+    "confidence": 1
+  },
+  {
+    "text": " işlemci",
+    "startMs": 805,
+    "endMs": 1312,
+    "timestampMs": 805,
+    "confidence": 1
+  },
+  {
+    "text": " normalinden",
+    "startMs": 1312,
+    "endMs": 1960,
+    "timestampMs": 1312,
+    "confidence": 1
+  },
+  {
+    "text": " pahalı",
+    "startMs": 1960,
+    "endMs": 3432,
+    "timestampMs": 1960,
+    "confidence": 1
+  },
+  {
+    "text": " Gerçekten",
+    "startMs": 3432,
+    "endMs": 4222,
+    "timestampMs": 3432,
+    "confidence": 1
+  },
+  {
+    "text": " fark",
+    "startMs": 4222,
+    "endMs": 4516,
+    "timestampMs": 4222,
+    "confidence": 1
+  },
+  {
+    "text": " ediyor",
+    "startMs": 4516,
+    "endMs": 4870,
+    "timestampMs": 4516,
+    "confidence": 1
+  },
+  {
+    "text": " mu",
+    "startMs": 4870,
+    "endMs": 6097,
+    "timestampMs": 4870,
+    "confidence": 1
+  },
+  {
+    "text": " Cevap",
+    "startMs": 6097,
+    "endMs": 6651,
+    "timestampMs": 6097,
+    "confidence": 1
+  },
+  {
+    "text": " ekran",
+    "startMs": 6651,
+    "endMs": 6993,
+    "timestampMs": 6651,
+    "confidence": 1
+  },
+  {
+    "text": " kartına",
+    "startMs": 6993,
+    "endMs": 7429,
+    "timestampMs": 6993,
+    "confidence": 1
+  },
+  {
+    "text": " bağlı",
+    "startMs": 7429,
+    "endMs": 8892,
+    "timestampMs": 7429,
+    "confidence": 1
+  },
+  {
+    "text": " X3D'nin",
+    "startMs": 8892,
+    "endMs": 9776,
+    "timestampMs": 8892,
+    "confidence": 1
+  },
+  {
+    "text": " yaptığı",
+    "startMs": 9776,
+    "endMs": 10165,
+    "timestampMs": 9776,
+    "confidence": 1
+  },
+  {
+    "text": " tek",
+    "startMs": 10165,
+    "endMs": 10401,
+    "timestampMs": 10165,
+    "confidence": 1
+  },
+  {
+    "text": " bir",
+    "startMs": 10401,
+    "endMs": 10554,
+    "timestampMs": 10401,
+    "confidence": 1
+  },
+  {
+    "text": " şey",
+    "startMs": 10554,
+    "endMs": 10802,
+    "timestampMs": 10554,
+    "confidence": 1
+  },
+  {
+    "text": " var",
+    "startMs": 10802,
+    "endMs": 11238,
+    "timestampMs": 10802,
+    "confidence": 1
+  },
+  {
+    "text": " işlemcinin",
+    "startMs": 11238,
+    "endMs": 11899,
+    "timestampMs": 11238,
+    "confidence": 1
+  },
+  {
+    "text": " üstüne",
+    "startMs": 11899,
+    "endMs": 12252,
+    "timestampMs": 11899,
+    "confidence": 1
+  },
+  {
+    "text": " fazladan",
+    "startMs": 12252,
+    "endMs": 12771,
+    "timestampMs": 12252,
+    "confidence": 1
+  },
+  {
+    "text": " önbellek",
+    "startMs": 12771,
+    "endMs": 13208,
+    "timestampMs": 12771,
+    "confidence": 1
+  },
+  {
+    "text": " koyuyor",
+    "startMs": 13208,
+    "endMs": 14729,
+    "timestampMs": 13208,
+    "confidence": 1
+  },
+  {
+    "text": " Oyunun",
+    "startMs": 14729,
+    "endMs": 15259,
+    "timestampMs": 14729,
+    "confidence": 1
+  },
+  {
+    "text": " sık",
+    "startMs": 15259,
+    "endMs": 15472,
+    "timestampMs": 15259,
+    "confidence": 1
+  },
+  {
+    "text": " kullandığı",
+    "startMs": 15472,
+    "endMs": 16014,
+    "timestampMs": 15472,
+    "confidence": 1
+  },
+  {
+    "text": " veri",
+    "startMs": 16014,
+    "endMs": 16250,
+    "timestampMs": 16014,
+    "confidence": 1
+  },
+  {
+    "text": " bu",
+    "startMs": 16250,
+    "endMs": 16403,
+    "timestampMs": 16250,
+    "confidence": 1
+  },
+  {
+    "text": " önbellekte",
+    "startMs": 16403,
+    "endMs": 16993,
+    "timestampMs": 16403,
+    "confidence": 1
+  },
+  {
+    "text": " kalırsa",
+    "startMs": 16993,
+    "endMs": 17441,
+    "timestampMs": 16993,
+    "confidence": 1
+  },
+  {
+    "text": " işlemci",
+    "startMs": 17441,
+    "endMs": 17925,
+    "timestampMs": 17441,
+    "confidence": 1
+  },
+  {
+    "text": " sistem",
+    "startMs": 17925,
+    "endMs": 18373,
+    "timestampMs": 17925,
+    "confidence": 1
+  },
+  {
+    "text": " belleğine",
+    "startMs": 18373,
+    "endMs": 18833,
+    "timestampMs": 18373,
+    "confidence": 1
+  },
+  {
+    "text": " hiç",
+    "startMs": 18833,
+    "endMs": 19021,
+    "timestampMs": 18833,
+    "confidence": 1
+  },
+  {
+    "text": " gitmiyor",
+    "startMs": 19021,
+    "endMs": 20613,
+    "timestampMs": 19021,
+    "confidence": 1
+  },
+  {
+    "text": " Sonuç",
+    "startMs": 20613,
+    "endMs": 21321,
+    "timestampMs": 20613,
+    "confidence": 1
+  },
+  {
+    "text": " 1080p'de",
+    "startMs": 21321,
+    "endMs": 22170,
+    "timestampMs": 21321,
+    "confidence": 1
+  },
+  {
+    "text": " ve",
+    "startMs": 22170,
+    "endMs": 22276,
+    "timestampMs": 22170,
+    "confidence": 1
+  },
+  {
+    "text": " işlemcinin",
+    "startMs": 22276,
+    "endMs": 22960,
+    "timestampMs": 22276,
+    "confidence": 1
+  },
+  {
+    "text": " sınırladığı",
+    "startMs": 22960,
+    "endMs": 23526,
+    "timestampMs": 22960,
+    "confidence": 1
+  },
+  {
+    "text": " oyunlarda",
+    "startMs": 23526,
+    "endMs": 24127,
+    "timestampMs": 23526,
+    "confidence": 1
+  },
+  {
+    "text": " yüzde",
+    "startMs": 24127,
+    "endMs": 24446,
+    "timestampMs": 24127,
+    "confidence": 1
+  },
+  {
+    "text": " on",
+    "startMs": 24446,
+    "endMs": 24646,
+    "timestampMs": 24446,
+    "confidence": 1
+  },
+  {
+    "text": " ile",
+    "startMs": 24646,
+    "endMs": 24823,
+    "timestampMs": 24646,
+    "confidence": 1
+  },
+  {
+    "text": " yirmi",
+    "startMs": 24823,
+    "endMs": 25071,
+    "timestampMs": 24823,
+    "confidence": 1
+  },
+  {
+    "text": " arası",
+    "startMs": 25071,
+    "endMs": 25366,
+    "timestampMs": 25071,
+    "confidence": 1
+  },
+  {
+    "text": " kazanç",
+    "startMs": 25366,
+    "endMs": 26899,
+    "timestampMs": 25366,
+    "confidence": 1
+  },
+  {
+    "text": " Ama",
+    "startMs": 26899,
+    "endMs": 27300,
+    "timestampMs": 26899,
+    "confidence": 1
+  },
+  {
+    "text": " 4K'da",
+    "startMs": 27300,
+    "endMs": 27759,
+    "timestampMs": 27300,
+    "confidence": 1
+  },
+  {
+    "text": " oyunu",
+    "startMs": 27759,
+    "endMs": 28078,
+    "timestampMs": 27759,
+    "confidence": 1
+  },
+  {
+    "text": " sınırlayan",
+    "startMs": 28078,
+    "endMs": 28608,
+    "timestampMs": 28078,
+    "confidence": 1
+  },
+  {
+    "text": " işlemci",
+    "startMs": 28608,
+    "endMs": 29068,
+    "timestampMs": 28608,
+    "confidence": 1
+  },
+  {
+    "text": " değil",
+    "startMs": 29068,
+    "endMs": 29564,
+    "timestampMs": 29068,
+    "confidence": 1
+  },
+  {
+    "text": " ekran",
+    "startMs": 29564,
+    "endMs": 29906,
+    "timestampMs": 29564,
+    "confidence": 1
+  },
+  {
+    "text": " kartı",
+    "startMs": 29906,
+    "endMs": 31403,
+    "timestampMs": 29906,
+    "confidence": 1
+  },
+  {
+    "text": " Orada",
+    "startMs": 31403,
+    "endMs": 31969,
+    "timestampMs": 31403,
+    "confidence": 1
+  },
+  {
+    "text": " fark",
+    "startMs": 31969,
+    "endMs": 32288,
+    "timestampMs": 31969,
+    "confidence": 1
+  },
+  {
+    "text": " neredeyse",
+    "startMs": 32288,
+    "endMs": 32854,
+    "timestampMs": 32288,
+    "confidence": 1
+  },
+  {
+    "text": " sıfıra",
+    "startMs": 32854,
+    "endMs": 33208,
+    "timestampMs": 32854,
+    "confidence": 1
+  },
+  {
+    "text": " iniyor",
+    "startMs": 33208,
+    "endMs": 34717,
+    "timestampMs": 33208,
+    "confidence": 1
+  },
+  {
+    "text": " Video",
+    "startMs": 34717,
+    "endMs": 35153,
+    "timestampMs": 34717,
+    "confidence": 1
+  },
+  {
+    "text": " render",
+    "startMs": 35153,
+    "endMs": 35484,
+    "timestampMs": 35153,
+    "confidence": 1
+  },
+  {
+    "text": " ederken",
+    "startMs": 35484,
+    "endMs": 35955,
+    "timestampMs": 35484,
+    "confidence": 1
+  },
+  {
+    "text": " kazancı",
+    "startMs": 35955,
+    "endMs": 36450,
+    "timestampMs": 35955,
+    "confidence": 1
+  },
+  {
+    "text": " hiç",
+    "startMs": 36450,
+    "endMs": 36675,
+    "timestampMs": 36450,
+    "confidence": 1
+  },
+  {
+    "text": " yok",
+    "startMs": 36675,
+    "endMs": 38007,
+    "timestampMs": 36675,
+    "confidence": 1
+  },
+  {
+    "text": " Yani",
+    "startMs": 38007,
+    "endMs": 38550,
+    "timestampMs": 38007,
+    "confidence": 1
+  },
+  {
+    "text": " soru",
+    "startMs": 38550,
+    "endMs": 38844,
+    "timestampMs": 38550,
+    "confidence": 1
+  },
+  {
+    "text": " X3D",
+    "startMs": 38844,
+    "endMs": 39493,
+    "timestampMs": 38844,
+    "confidence": 1
+  },
+  {
+    "text": " iyi",
+    "startMs": 39493,
+    "endMs": 39705,
+    "timestampMs": 39493,
+    "confidence": 1
+  },
+  {
+    "text": " mi",
+    "startMs": 39705,
+    "endMs": 39811,
+    "timestampMs": 39705,
+    "confidence": 1
+  },
+  {
+    "text": " değil",
+    "startMs": 39811,
+    "endMs": 41238,
+    "timestampMs": 39811,
+    "confidence": 1
+  },
+  {
+    "text": " Soru",
+    "startMs": 41238,
+    "endMs": 41580,
+    "timestampMs": 41238,
+    "confidence": 1
+  },
+  {
+    "text": " şu",
+    "startMs": 41580,
+    "endMs": 41958,
+    "timestampMs": 41580,
+    "confidence": 1
+  },
+  {
+    "text": " senin",
+    "startMs": 41958,
+    "endMs": 42300,
+    "timestampMs": 41958,
+    "confidence": 1
+  },
+  {
+    "text": " darboğazın",
+    "startMs": 42300,
+    "endMs": 42889,
+    "timestampMs": 42300,
+    "confidence": 1
+  },
+  {
+    "text": " işlemcide",
+    "startMs": 42889,
+    "endMs": 43502,
+    "timestampMs": 42889,
+    "confidence": 1
+  },
+  {
+    "text": " mi",
+    "startMs": 43502,
+    "endMs": 44717,
+    "timestampMs": 43502,
+    "confidence": 1
+  },
+  {
+    "text": " Yarın",
+    "startMs": 44717,
+    "endMs": 45342,
+    "timestampMs": 44717,
+    "confidence": 1
+  },
+  {
+    "text": " RTX",
+    "startMs": 45342,
+    "endMs": 45908,
+    "timestampMs": 45342,
+    "confidence": 1
+  },
+  {
+    "text": " 5060",
+    "startMs": 45908,
+    "endMs": 46675,
+    "timestampMs": 45908,
+    "confidence": 1
+  },
+  {
+    "text": " yapay",
+    "startMs": 46675,
+    "endMs": 46958,
+    "timestampMs": 46675,
+    "confidence": 1
+  },
+  {
+    "text": " zeka",
+    "startMs": 46958,
+    "endMs": 47288,
+    "timestampMs": 46958,
+    "confidence": 1
+  },
+  {
+    "text": " için",
+    "startMs": 47288,
+    "endMs": 47524,
+    "timestampMs": 47288,
+    "confidence": 1
+  },
+  {
+    "text": " yeterli",
+    "startMs": 47524,
+    "endMs": 47984,
+    "timestampMs": 47524,
+    "confidence": 1
+  },
+  {
+    "text": " mi",
+    "startMs": 47984,
+    "endMs": 48113,
+    "timestampMs": 47984,
+    "confidence": 1
+  }
+]

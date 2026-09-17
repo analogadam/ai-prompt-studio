@@ -1,0 +1,76 @@
+{
+  "slug": "x3d-fark-eder-mi",
+  "title": "X3D islemci oyunda gercekten fark eder mi",
+  "format": "reels",
+  "voice": "tr-TR-AhmetNeural",
+  "rate": "+6%",
+  "background": {
+    "type": "aurora"
+  },
+  "lexicon": {
+    "X3D": "iks üç di",
+    "1080p": "bin seksen pi",
+    "4K": "dört ka"
+  },
+  "narration": "X3D işlemci normalinden pahalı. Gerçekten fark ediyor mu? Cevap ekran kartına bağlı. X3D'nin yaptığı tek bir şey var: işlemcinin üstüne fazladan önbellek koyuyor. Oyunun sık kullandığı veri bu önbellekte kalırsa işlemci sistem belleğine hiç gitmiyor. Sonuç, 1080p'de ve işlemcinin sınırladığı oyunlarda yüzde on ile yirmi arası kazanç. Ama 4K'da oyunu sınırlayan işlemci değil, ekran kartı. Orada fark neredeyse sıfıra iniyor. Video render ederken kazancı hiç yok. Yani soru X3D iyi mi değil. Soru şu: senin darboğazın işlemcide mi? Yarın: RTX 5060 yapay zeka için yeterli mi?",
+  "scenes": [
+    {
+      "type": "broll",
+      "durationInSeconds": 8,
+      "src": "islemci.mp4",
+      "motion": "in",
+      "caption": "Tek yaptığı fazladan önbellek",
+      "highlight": "önbellek"
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 7,
+      "src": "oyun-ekrani.mp4",
+      "startFromInSeconds": 3,
+      "motion": "left",
+      "caption": "Kazanç 1080p'de çıkıyor",
+      "highlight": "1080p'de"
+    },
+    {
+      "type": "stats",
+      "durationInSeconds": 11,
+      "heading": "X3D kazancı nerede?",
+      "stats": [
+        {
+          "value": 20,
+          "suffix": "%",
+          "label": "1080p oyun"
+        },
+        {
+          "value": 5,
+          "suffix": "%",
+          "label": "4K oyun"
+        },
+        {
+          "value": 0,
+          "suffix": "%",
+          "label": "video render"
+        }
+      ],
+      "revealAtSeconds": [1.5, 4.5, 7]
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 5,
+      "src": "render.mp4",
+      "startFromInSeconds": 4,
+      "motion": "out",
+      "dim": 0.5,
+      "caption": "Render'da kazanç yok",
+      "highlight": "yok"
+    },
+    {
+      "type": "outro",
+      "durationInSeconds": 7.5,
+      "summary": "Soru X3D iyi mi değil. Darboğazın nerede?",
+      "next": "RTX 5060 yapay zeka için yeterli mi?",
+      "promise": "Her gün 3 teknoloji sorusu",
+      "cta": "Kanal ikonuna dokun"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "rtx-5060-yapay-zeka",
+  "title": "RTX 5060 yapay zeka icin yeterli mi",
+  "format": "reels",
+  "voice": "tr-TR-AhmetNeural",
+  "rate": "+6%",
+  "background": {
+    "type": "aurora"
+  },
+  "lexicon": {
+    "5060": "elli altmış"
+  },
+  "narration": "RTX 5060 aldın, yapay zeka çalıştıracaksın. Yeterli mi? Cevap kartın hızında değil, belleğinde. 5060'ta sekiz gigabayt VRAM var. Yedi milyar parametreli bir model, sıkıştırılmış halde yaklaşık beş gigabayt yer kaplıyor. Rahat çalışır. On üç milyarlık model sekiz gigabaytı zorluyor; taşarsa hız birkaç kat düşüyor. Otuz milyarlık modeli hiç deneme, tek başına on sekiz gigabayt ister. Görsel üretimde ise sekiz gigabayt yetiyor. Yani 5060 yapay zekaya girer, ama küçük modellerle. Sınırı koyan kartın hızı değil, sekiz gigabayt. Yarın: SSD takarken nereye dikkat etmeli?",
+  "scenes": [
+    {
+      "type": "broll",
+      "durationInSeconds": 8,
+      "src": "ekran-karti.mp4",
+      "startFromInSeconds": 2,
+      "motion": "in",
+      "caption": "Sınırı hız değil bellek koyar",
+      "highlight": "bellek"
+    },
+    {
+      "type": "stats",
+      "durationInSeconds": 12,
+      "heading": "8 GB ile ne çalışır?",
+      "stats": [
+        {
+          "value": 5,
+          "suffix": " GB",
+          "label": "7B model"
+        },
+        {
+          "value": 8,
+          "suffix": " GB",
+          "label": "13B model"
+        },
+        {
+          "value": 18,
+          "suffix": " GB",
+          "label": "30B model"
+        }
+      ],
+      "revealAtSeconds": [1.5, 5, 8]
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 6,
+      "src": "bellek.mp4",
+      "motion": "left",
+      "caption": "13B tam sınırda",
+      "highlight": "sınırda"
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 5,
+      "src": "yapay-zeka.mp4",
+      "startFromInSeconds": 5,
+      "motion": "out",
+      "dim": 0.45,
+      "caption": "Görsel üretim sorunsuz",
+      "highlight": "sorunsuz"
+    },
+    {
+      "type": "outro",
+      "durationInSeconds": 7.5,
+      "summary": "5060 yapay zekaya girer, ama küçük modellerle.",
+      "next": "SSD takarken nereye dikkat etmeli?",
+      "promise": "Her gün 3 teknoloji sorusu",
+      "cta": "Kanal ikonuna dokun"
+    }
+  ]
+}
