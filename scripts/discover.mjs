@@ -20,7 +20,9 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { readApiKey } from "./env.mjs";
+import { WORD_END, WORD_START } from "./text.mjs";
 
 const API = "https://www.googleapis.com/youtube/v3";
 const CONFIG_FILE = "discovery.json";
@@ -34,11 +36,9 @@ const fail = (message) => {
   process.exit(1);
 };
 
-const apiKey = readApiKey(
-  "YOUTUBE_API_KEY",
-  "https://console.cloud.google.com/apis/credentials adresinden ucretsiz alinir\n" +
-    '(once "YouTube Data API v3" etkinlestirilir).',
-);
+// Anahtar akis baslarken okunur: betik iceri aktarildiginda (baslik kalibini
+// denemek gibi) anahtar sormasin.
+let apiKey;
 
 /** Sayisal bayraklari okur: --hours 72 gibi. */
 const readFlag = (name, fallback) => {
@@ -46,7 +46,8 @@ const readFlag = (name, fallback) => {
   if (index === -1) return fallback;
 
   const value = Number(process.argv[index + 1]);
-  if (!Number.isFinite(value) || value <= 0) fail("--" + name + " icin gecerli bir sayi verin");
+  if (!Number.isFinite(value) || value <= 0)
+    fail("--" + name + " icin gecerli bir sayi verin");
   return value;
 };
 
@@ -62,14 +63,20 @@ const readConfig = () => {
 
 const request = async (endpoint, params) => {
   const url = new URL(API + "/" + endpoint);
-  for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
+  for (const [key, value] of Object.entries(params))
+    url.searchParams.set(key, value);
   url.searchParams.set("key", apiKey);
 
   const response = await fetch(url);
   if (!response.ok) {
     const body = await response.text();
     // Kota bitmesi en sik hata; mesaji oldugu gibi gostermek tahminden iyi.
-    fail("YouTube API istegi basarisiz (" + response.status + "): " + body.slice(0, 300));
+    fail(
+      "YouTube API istegi basarisiz (" +
+        response.status +
+        "): " +
+        body.slice(0, 300),
+    );
   }
   return response.json();
 };
@@ -79,7 +86,11 @@ const fetchByIds = async (endpoint, part, ids) => {
   const items = [];
   for (let i = 0; i < ids.length; i += ID_BATCH) {
     const batch = ids.slice(i, i + ID_BATCH);
-    const data = await request(endpoint, { part, id: batch.join(","), maxResults: ID_BATCH });
+    const data = await request(endpoint, {
+      part,
+      id: batch.join(","),
+      maxResults: ID_BATCH,
+    });
     items.push(...data.items);
   }
   return items;
@@ -87,17 +98,49 @@ const fetchByIds = async (endpoint, part, ids) => {
 
 /** ISO 8601 suresini ("PT1M12S") saniyeye cevirir. */
 const toSeconds = (duration) => {
-  const match = /^P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(duration);
+  const match = /^P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(
+    duration,
+  );
   if (!match) return Number.POSITIVE_INFINITY;
 
-  const [, days, hours, minutes, seconds] = match.map((part) => (part ? Number(part) : 0));
+  const [, days, hours, minutes, seconds] = match.map((part) =>
+    part ? Number(part) : 0,
+  );
   return ((days * 24 + hours) * 60 + minutes) * 60 + seconds;
 };
 
-const QUESTION = /\?|\b(nasıl|neden|niçin|niye|kaç|hangi|ne kadar|mı|mi|mu|mü)\b/i;
-const SECOND_PERSON = /\b(sen|senin|sana|sakın|yapma|alma|almayın|dikkat|bunu|şunu)\b/i;
+/** Turkce kelime listesinden sinirlari dogru kurulmus bir desen yapar. */
+const wordsPattern = (words) =>
+  new RegExp(WORD_START + "(?:" + words.join("|") + ")" + WORD_END, "iu");
+
+// Soru eki ayri yazilir ("oyun odakli mi"), yani kelime olarak aranir.
+const QUESTION = wordsPattern([
+  "nasıl",
+  "neden",
+  "niçin",
+  "niye",
+  "kaç",
+  "hangi",
+  "ne kadar",
+  "mı",
+  "mi",
+  "mu",
+  "mü",
+]);
+const SECOND_PERSON = wordsPattern([
+  "sen",
+  "senin",
+  "sana",
+  "sakın",
+  "yapma",
+  "alma",
+  "almayın",
+  "dikkat",
+  "bunu",
+  "şunu",
+]);
 // "GPT-6", "RTX 5090", "Gemini 3": marka + surum kalibi.
-const PRODUCT_NAME = /\b[A-ZÇĞİÖŞÜ][\wÇĞİÖŞÜçğıöşü]*[- ]?\d/;
+const PRODUCT_NAME = new RegExp(WORD_START + "\\p{Lu}\\p{L}*[- ]?\\d", "u");
 
 /**
  * Baslik kalibini isaretler.
@@ -106,8 +149,8 @@ const PRODUCT_NAME = /\b[A-ZÇĞİÖŞÜ][\wÇĞİÖŞÜçğıöşü]*[- ]?\d/;
  * hep urun duyurusu oldu ("GPT-6 Astra" 4 izlenme). Kalip, konuyu almadan once
  * bakilacak ilk sey.
  */
-const titleShape = (title) => {
-  if (QUESTION.test(title)) return "soru";
+export const titleShape = (title) => {
+  if (title.includes("?") || QUESTION.test(title)) return "soru";
   if (SECOND_PERSON.test(title)) return "iddia";
   if (PRODUCT_NAME.test(title)) return "duyuru";
   return "duz";
@@ -144,7 +187,9 @@ const averageViews = (channel) => {
 };
 
 const collectCandidates = async (config, windowHours, minViews) => {
-  const publishedAfter = new Date(Date.now() - windowHours * 3600 * 1000).toISOString();
+  const publishedAfter = new Date(
+    Date.now() - windowHours * 3600 * 1000,
+  ).toISOString();
 
   const ids = new Set();
   for (const query of config.queries) {
@@ -154,7 +199,11 @@ const collectCandidates = async (config, windowHours, minViews) => {
   }
   if (ids.size === 0) return [];
 
-  const videos = await fetchByIds("videos", "snippet,statistics,contentDetails", [...ids]);
+  const videos = await fetchByIds(
+    "videos",
+    "snippet,statistics,contentDetails",
+    [...ids],
+  );
 
   const usable = videos.filter((video) => {
     const views = Number(video.statistics?.viewCount ?? 0);
@@ -163,13 +212,16 @@ const collectCandidates = async (config, windowHours, minViews) => {
   });
   if (usable.length === 0) return [];
 
-  const channelIds = [...new Set(usable.map((video) => video.snippet.channelId))];
+  const channelIds = [
+    ...new Set(usable.map((video) => video.snippet.channelId)),
+  ];
   const channels = await fetchByIds("channels", "statistics", channelIds);
   const byChannel = new Map(channels.map((channel) => [channel.id, channel]));
 
   return usable.map((video) => {
     const views = Number(video.statistics.viewCount);
-    const ageHours = (Date.now() - new Date(video.snippet.publishedAt).getTime()) / 3_600_000;
+    const ageHours =
+      (Date.now() - new Date(video.snippet.publishedAt).getTime()) / 3_600_000;
     const channel = byChannel.get(video.snippet.channelId);
 
     return {
@@ -218,54 +270,81 @@ const formatRow = (candidate, index) =>
 
 // --- akis ---
 
-const config = readConfig();
-const windowHours = readFlag("hours", config.windowHours ?? 48);
-const minViews = readFlag("min-views", config.minViews ?? 5000);
-const limit = readFlag("limit", config.limit ?? 25);
+// Yalnizca dogrudan calistirildiginda taramaya baslar; iceri aktarildiginda
+// (titleShape'i denemek gibi) sadece yardimcilari verir.
+const isDirectRun =
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 
-console.log(
-  "\n== Konu kesfi ==\n" +
-    "   pencere: son " +
-    windowHours +
-    " saat | esik: " +
-    minViews.toLocaleString("tr-TR") +
-    " izlenme | kota: ~" +
-    config.queries.length * SEARCH_COST +
-    " birim\n",
-);
+if (isDirectRun) {
+  apiKey = readApiKey(
+    "YOUTUBE_API_KEY",
+    "https://console.cloud.google.com/apis/credentials adresinden ucretsiz alinir\n" +
+      '(once "YouTube Data API v3" etkinlestirilir).',
+  );
 
-const candidates = await collectCandidates(config, windowHours, minViews);
-if (candidates.length === 0) {
-  fail("Esigi gecen video cikmadi. --hours degerini buyutun ya da --min-views degerini dusurun.");
+  const config = readConfig();
+  const windowHours = readFlag("hours", config.windowHours ?? 48);
+  const minViews = readFlag("min-views", config.minViews ?? 5000);
+  const limit = readFlag("limit", config.limit ?? 25);
+
+  console.log(
+    "\n== Konu kesfi ==\n" +
+      "   pencere: son " +
+      windowHours +
+      " saat | esik: " +
+      minViews.toLocaleString("tr-TR") +
+      " izlenme | kota: ~" +
+      config.queries.length * SEARCH_COST +
+      " birim\n",
+  );
+
+  const candidates = await collectCandidates(config, windowHours, minViews);
+  if (candidates.length === 0) {
+    fail(
+      "Esigi gecen video cikmadi. --hours degerini buyutun ya da --min-views degerini dusurun.",
+    );
+  }
+
+  const ranked = limitPerChannel(
+    candidates.sort((a, b) => b.outlier - a.outlier),
+    config.perChannelLimit ?? 2,
+  ).slice(0, limit);
+
+  const today = new Date().toISOString().slice(0, 10);
+  const outputFile = path.join(OUTPUT_DIR, today + ".json");
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.writeFileSync(
+    outputFile,
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        windowHours,
+        minViews,
+        topics: ranked,
+      },
+      null,
+      2,
+    ),
+    "utf8",
+  );
+
+  console.log("\n  #     asim    izlenme    yas  kalip    baslik");
+  console.log("  " + "-".repeat(100));
+  ranked.forEach((candidate, index) =>
+    console.log("  " + formatRow(candidate, index)),
+  );
+
+  const shapes = ranked.reduce((counts, candidate) => {
+    counts[candidate.shape] = (counts[candidate.shape] ?? 0) + 1;
+    return counts;
+  }, {});
+
+  console.log(
+    "\nKalip dagilimi: " +
+      Object.entries(shapes)
+        .map(([shape, count]) => shape + " " + count)
+        .join(", "),
+  );
+  console.log("\nBitti: " + outputFile + " (" + ranked.length + " konu)");
 }
-
-const ranked = limitPerChannel(
-  candidates.sort((a, b) => b.outlier - a.outlier),
-  config.perChannelLimit ?? 2,
-).slice(0, limit);
-
-const today = new Date().toISOString().slice(0, 10);
-const outputFile = path.join(OUTPUT_DIR, today + ".json");
-fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-fs.writeFileSync(
-  outputFile,
-  JSON.stringify({ generatedAt: new Date().toISOString(), windowHours, minViews, topics: ranked }, null, 2),
-  "utf8",
-);
-
-console.log("\n  #     asim    izlenme    yas  kalip    baslik");
-console.log("  " + "-".repeat(100));
-ranked.forEach((candidate, index) => console.log("  " + formatRow(candidate, index)));
-
-const shapes = ranked.reduce((counts, candidate) => {
-  counts[candidate.shape] = (counts[candidate.shape] ?? 0) + 1;
-  return counts;
-}, {});
-
-console.log(
-  "\nKalip dagilimi: " +
-    Object.entries(shapes)
-      .map(([shape, count]) => shape + " " + count)
-      .join(", "),
-);
-console.log("\nBitti: " + outputFile + " (" + ranked.length + " konu)");

@@ -15,6 +15,8 @@
  *   - Bir brief kendi "lexicon" alaniyla ekleme yapabilir veya bir girdiyi
  *     ezebilir; degeri null verilen anahtar o videoda devre disi kalir.
  */
+import { WORD_END, WORD_START } from "./text.mjs";
+
 export const lexicon = {
   // Bellek ve depolama
   VRAM: "vi ram",
@@ -74,10 +76,6 @@ export const lexicon = {
 const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const HAS_UPPERCASE = /\p{Lu}/u;
-// \b ASCII'ye gore calisir: "VRAM'ı" gibi Turkce harfle biten bir kelimenin
-// sonunda sinir goremez. Sinir bu yuzden harf/rakam olmamasi kosuluyla kurulur.
-const NOT_LETTER_BEFORE = "(?<![\\p{L}\\p{N}_])";
-const NOT_LETTER_AFTER = "(?![\\p{L}\\p{N}_])";
 
 /**
  * Terimin ekiyle birlikte eslenmesi icin desen kurar.
@@ -90,11 +88,10 @@ const NOT_LETTER_AFTER = "(?![\\p{L}\\p{N}_])";
  * "GBit" eslesmez.
  */
 const buildPattern = (term) => {
-  const suffix = HAS_UPPERCASE.test(term) ? "(?:['’](\\p{Ll}+))?" : "(\\p{Ll}*)";
-  return new RegExp(
-    NOT_LETTER_BEFORE + escapeRegExp(term) + suffix + NOT_LETTER_AFTER,
-    "gu",
-  );
+  const suffix = HAS_UPPERCASE.test(term)
+    ? "(?:['’](\\p{Ll}+))?"
+    : "(\\p{Ll}*)";
+  return new RegExp(WORD_START + escapeRegExp(term) + suffix + WORD_END, "gu");
 };
 
 /**
@@ -123,7 +120,8 @@ export const applyLexicon = (narration, overrides = {}) => {
     text = text.replace(buildPattern(term), (match, suffix) => {
       const spoken = merged[term] + (suffix ?? "");
       const current = rules.get(spoken);
-      if (current === undefined || match.length < current.length) rules.set(spoken, match);
+      if (current === undefined || match.length < current.length)
+        rules.set(spoken, match);
       return spoken;
     });
   }
