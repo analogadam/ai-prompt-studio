@@ -7,9 +7,6 @@
   "background": {
     "type": "aurora"
   },
-  "lexicon": {
-    "5060": "elli altmış"
-  },
   "narration": "RTX 5060 aldın, yapay zeka çalıştıracaksın. Yeterli mi? Cevap kartın hızında değil, belleğinde. 5060'ta sekiz gigabayt VRAM var. Yedi milyar parametreli bir model, sıkıştırılmış halde yaklaşık beş gigabayt yer kaplıyor. Rahat çalışır. On üç milyarlık model sekiz gigabaytı zorluyor; taşarsa hız birkaç kat düşüyor. Otuz milyarlık modeli hiç deneme, tek başına on sekiz gigabayt ister. Görsel üretimde ise sekiz gigabayt yetiyor. Yani 5060 yapay zekaya girer, ama küçük modellerle. Sınırı koyan kartın hızı değil, sekiz gigabayt. Yarın: SSD takarken nereye dikkat etmeli?",
   "scenes": [
     {
@@ -42,7 +39,11 @@
           "label": "30B model"
         }
       ],
-      "revealAtSeconds": [1.5, 5, 8]
+      "revealAtSeconds": [
+        1.5,
+        5,
+        8
+      ]
     },
     {
       "type": "broll",

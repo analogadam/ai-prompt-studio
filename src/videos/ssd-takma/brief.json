@@ -2,7 +2,7 @@
   "slug": "ssd-takma",
   "title": "SSD takarken nereye dikkat etmeli",
   "format": "reels",
-  "voice": "tr-TR-AhmetNeural",
+  "voice": "tr-TR-EmelNeural",
   "rate": "+6%",
   "background": {
     "type": "aurora"
@@ -30,7 +30,11 @@
         "Boyut 2280 mi?",
         "Ekran kartıyla hat paylaşımı var mı?"
       ],
-      "revealAtSeconds": [1.5, 4.5, 7.5]
+      "revealAtSeconds": [
+        1.5,
+        4.5,
+        7.5
+      ]
     },
     {
       "type": "broll",

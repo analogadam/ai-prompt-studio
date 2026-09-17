@@ -12,7 +12,7 @@ const video: VideoData = {
   "scenes": [
     {
       "type": "broll",
-      "durationInSeconds": 10.3,
+      "durationInSeconds": 10.033333333333333,
       "src": "ssd-takma/anakart.mp4",
       "motion": "in",
       "caption": "Her yuva aynı değil",
@@ -20,7 +20,7 @@ const video: VideoData = {
     },
     {
       "type": "bullets",
-      "durationInSeconds": 14.133333333333333,
+      "durationInSeconds": 13.8,
       "heading": "Takmadan önce üç kontrol",
       "bullets": [
         "Yuva SATA mı, NVMe mi?",
@@ -28,14 +28,14 @@ const video: VideoData = {
         "Ekran kartıyla hat paylaşımı var mı?"
       ],
       "revealAtSeconds": [
-        1.9333333333333333,
-        5.8,
-        9.633333333333333
+        1.8666666666666667,
+        5.633333333333334,
+        9.4
       ]
     },
     {
       "type": "broll",
-      "durationInSeconds": 6.433333333333334,
+      "durationInSeconds": 6.266666666666667,
       "src": "ssd-takma/ssd.mp4",
       "startFromInSeconds": 1,
       "motion": "left",
@@ -44,7 +44,7 @@ const video: VideoData = {
     },
     {
       "type": "broll",
-      "durationInSeconds": 7.7,
+      "durationInSeconds": 7.533333333333333,
       "src": "ssd-takma/dizustu.mp4",
       "startFromInSeconds": 6,
       "motion": "out",
@@ -53,7 +53,7 @@ const video: VideoData = {
     },
     {
       "type": "outro",
-      "durationInSeconds": 9.633333333333333,
+      "durationInSeconds": 9.4,
       "summary": "Kılavuza bakmak beş dakika, yanlış yuva bir akşam.",
       "next": "X3D işlemci oyunda fark eder mi?",
       "promise": "Her gün 3 teknoloji sorusu",

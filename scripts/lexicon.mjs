@@ -20,8 +20,8 @@ import { escapeRegExp, WORD_END, WORD_START } from "./text.mjs";
 export const lexicon = {
   // Bellek ve depolama
   VRAM: "vi ram",
-  SSD: "es es de",
-  HDD: "eyç di di",
+  SSD: "es es di",
+  HDD: "harddisk",
   NVMe: "en vi em i",
   DDR: "de de ar",
   GB: "cigabayt",
@@ -53,7 +53,7 @@ export const lexicon = {
   Claude: "klod",
 
   // Baglanti ve arayuz
-  USB: "yu es be",
+  USB: "yu es bi",
   HDMI: "eyç di em ay",
   SATA: "sata",
   PCIe: "pi si ay i",

@@ -12,7 +12,7 @@ const video: VideoData = {
   "scenes": [
     {
       "type": "broll",
-      "durationInSeconds": 10.266666666666667,
+      "durationInSeconds": 10.3,
       "src": "rtx-5060-yapay-zeka/ekran-karti.mp4",
       "startFromInSeconds": 2,
       "motion": "in",
@@ -21,7 +21,7 @@ const video: VideoData = {
     },
     {
       "type": "stats",
-      "durationInSeconds": 15.366666666666667,
+      "durationInSeconds": 15.466666666666667,
       "heading": "8 GB ile ne çalışır?",
       "stats": [
         {
@@ -42,13 +42,13 @@ const video: VideoData = {
       ],
       "revealAtSeconds": [
         1.9333333333333333,
-        6.4,
-        10.266666666666667
+        6.433333333333334,
+        10.3
       ]
     },
     {
       "type": "broll",
-      "durationInSeconds": 7.7,
+      "durationInSeconds": 7.733333333333333,
       "src": "rtx-5060-yapay-zeka/bellek.mp4",
       "motion": "left",
       "caption": "13B tam sınırda",
@@ -56,7 +56,7 @@ const video: VideoData = {
     },
     {
       "type": "broll",
-      "durationInSeconds": 6.4,
+      "durationInSeconds": 6.433333333333334,
       "src": "rtx-5060-yapay-zeka/yapay-zeka.mp4",
       "startFromInSeconds": 5,
       "motion": "out",
@@ -66,7 +66,7 @@ const video: VideoData = {
     },
     {
       "type": "outro",
-      "durationInSeconds": 9.6,
+      "durationInSeconds": 9.666666666666666,
       "summary": "5060 yapay zekaya girer, ama küçük modellerle.",
       "next": "SSD takarken nereye dikkat etmeli?",
       "promise": "Her gün 3 teknoloji sorusu",
