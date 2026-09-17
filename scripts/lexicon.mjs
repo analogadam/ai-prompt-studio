@@ -1,15 +1,17 @@
 /**
- * Telaffuz sozlugu: teknik kisaltmalarin seslendirmede nasil okunacagi.
+ * Telaffuz sozlugu: teknik kisaltmalarin ve yabanci kelimelerin seslendirmede
+ * nasil okunacagi.
  *
- * Sorun: edge-tts Turkce sesi "VRAM" yazisini "vıram" diye okur, "CPU"yu
- * "cupu" yapar. Cozum, seslendirme metnine okunusu yazmak ama altyazida
- * dogru yazimi gostermektir. produce.mjs anahtari degeriyle degistirip
- * tts.py'ye ters yonde bir --replace kurali verir; boylece kulak "vi ram"
- * duyar, ekranda "VRAM" yazar.
+ * Sorun: edge-tts Turkce sesi "VRAM" yazisini "viram" diye okur, "CPU"yu
+ * "cupu", "gigabayt"i sert G ile soyler. Cozum, seslendirme metnine okunusu
+ * yazmak ama altyazida dogru yazimi gostermektir. produce.mjs anahtari
+ * degeriyle degistirip tts.py'ye ters yonde bir --replace kurali verir; boylece
+ * kulak "vi ram" duyar, ekranda "VRAM" yazar.
  *
  * Kurallar:
  *   - Anahtar buyuk/kucuk harf duyarli ve tam kelime olarak eslenir.
  *   - Uzun anahtar once uygulanir: "VRAM" islenmeden "RAM" devreye girmez.
+ *   - Turkce ekler korunur, okunusa tasinir (buildPattern'e bak).
  *   - Bir brief kendi "lexicon" alaniyla ekleme yapabilir veya bir girdiyi
  *     ezebilir; degeri null verilen anahtar o videoda devre disi kalir.
  */
@@ -19,7 +21,8 @@ export const lexicon = {
   SSD: "es es de",
   HDD: "eyç di di",
   NVMe: "en vi em i",
-  GB: "gigabayt",
+  DDR: "de de ar",
+  GB: "cigabayt",
   TB: "terabayt",
   MB: "megabayt",
 
@@ -30,16 +33,22 @@ export const lexicon = {
   AMD: "ey em di",
   NVIDIA: "envidya",
   Nvidia: "envidya",
+  GeForce: "cifors",
+  Ryzen: "rayzın",
   RTX: "ar ti eks",
   GTX: "ci ti eks",
-  GHz: "gigahertz",
+  GHz: "cigahertz",
   MHz: "megahertz",
 
   // Yapay zeka
   GPT: "ci pi ti",
+  ChatGPT: "çet ci pi ti",
   LLM: "el el em",
   API: "ey pi ay",
+  AI: "ey ay",
   OpenAI: "Open ey ay",
+  Gemini: "cemini",
+  Claude: "klod",
 
   // Baglanti ve arayuz
   USB: "yu es be",
@@ -49,13 +58,51 @@ export const lexicon = {
   RGB: "ar ci bi",
   OS: "o es",
   UI: "yu ay",
+
+  // Marka ve urun adlari
+  Google: "gugıl",
+  YouTube: "yutup",
+  Windows: "vindovs",
+
+  // Metinde acik yazilan olcu birimleri: Turkce'de "giga" yumusak soylenir,
+  // edge-tts ise sert G ile okur.
+  gigabayt: "cigabayt",
+  gigabit: "cigabit",
+  gigahertz: "cigahertz",
 };
 
 const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+const HAS_UPPERCASE = /\p{Lu}/u;
+// \b ASCII'ye gore calisir: "VRAM'ı" gibi Turkce harfle biten bir kelimenin
+// sonunda sinir goremez. Sinir bu yuzden harf/rakam olmamasi kosuluyla kurulur.
+const NOT_LETTER_BEFORE = "(?<![\\p{L}\\p{N}_])";
+const NOT_LETTER_AFTER = "(?![\\p{L}\\p{N}_])";
+
 /**
- * Seslendirme metnindeki kisaltmalari okunuslariyla degistirir ve altyazinin
+ * Terimin ekiyle birlikte eslenmesi icin desen kurar.
+ *
+ * Turkce'de ek almayan teknik metin yoktur: "VRAM'ı", "SSD'ler",
+ * "gigabayttan". Ek yok sayilirsa iki sey birden bozulur -- kisaltma ekinden
+ * kopuk okunur, altyazi da dogru yazima geri donemez. Yazim kurali geregi
+ * kisaltmalar ekini kesme isaretiyle alir, kucuk harfle yazilan kelimeler
+ * bitisik alir; desen de bu ikisini ayirir. Boylece "GB'lık" eslesir ama
+ * "GBit" eslesmez.
+ */
+const buildPattern = (term) => {
+  const suffix = HAS_UPPERCASE.test(term) ? "(?:['’](\\p{Ll}+))?" : "(\\p{Ll}*)";
+  return new RegExp(
+    NOT_LETTER_BEFORE + escapeRegExp(term) + suffix + NOT_LETTER_AFTER,
+    "gu",
+  );
+};
+
+/**
+ * Seslendirme metnindeki terimleri okunuslariyla degistirir ve altyazinin
  * dogru yazima geri donmesi icin tts.py kurallarini uretir.
+ *
+ * Kurallar gercekten yapilan degisikliklerden cikarilir: metinde "GB'ı"
+ * geciyorsa kural "cigabaytı=GB'ı" olur, yalin "GB"ye ait kural degil.
  *
  * @returns {{ narration: string, replace: string[] }}
  */
@@ -67,14 +114,22 @@ export const applyLexicon = (narration, overrides = {}) => {
     .sort((a, b) => b.length - a.length);
 
   let text = narration;
-  const replace = [];
+  // Ayni okunusa birden fazla yazim dusebilir ("GB" ve "gigabayt"). Ses ayni
+  // oldugu icin altyazi ikisini ayirt edemez; tek kural kalir ve kisa yazim
+  // secilir -- Shorts ekraninda "8 GB", "8 gigabayt"tan iyi okunur.
+  const rules = new Map();
 
   for (const term of terms) {
-    const pattern = new RegExp("\\b" + escapeRegExp(term) + "\\b", "g");
-    if (!pattern.test(text)) continue;
-    text = text.replace(pattern, merged[term]);
-    replace.push(merged[term] + "=" + term);
+    text = text.replace(buildPattern(term), (match, suffix) => {
+      const spoken = merged[term] + (suffix ?? "");
+      const current = rules.get(spoken);
+      if (current === undefined || match.length < current.length) rules.set(spoken, match);
+      return spoken;
+    });
   }
 
-  return { narration: text, replace };
+  return {
+    narration: text,
+    replace: [...rules].map(([spoken, written]) => spoken + "=" + written),
+  };
 };
