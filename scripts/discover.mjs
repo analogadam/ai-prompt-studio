@@ -22,7 +22,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readApiKey } from "./env.mjs";
-import { WORD_END, WORD_START } from "./text.mjs";
+import {
+  termsPattern,
+  toTurkishLower,
+  wordsPattern,
+  WORD_START,
+} from "./text.mjs";
 
 const API = "https://www.googleapis.com/youtube/v3";
 const CONFIG_FILE = "discovery.json";
@@ -109,10 +114,6 @@ const toSeconds = (duration) => {
   return ((days * 24 + hours) * 60 + minutes) * 60 + seconds;
 };
 
-/** Turkce kelime listesinden sinirlari dogru kurulmus bir desen yapar. */
-const wordsPattern = (words) =>
-  new RegExp(WORD_START + "(?:" + words.join("|") + ")" + WORD_END, "iu");
-
 // Soru eki ayri yazilir ("oyun odakli mi"), yani kelime olarak aranir.
 const QUESTION = wordsPattern([
   "nasıl",
@@ -150,11 +151,75 @@ const PRODUCT_NAME = new RegExp(WORD_START + "\\p{Lu}\\p{L}*[- ]?\\d", "u");
  * bakilacak ilk sey.
  */
 export const titleShape = (title) => {
-  if (title.includes("?") || QUESTION.test(title)) return "soru";
-  if (SECOND_PERSON.test(title)) return "iddia";
+  // Desenler kucuk harfli; "YAPAY ZEKA MI" ancak boyle soru sayilir.
+  const text = toTurkishLower(title);
+
+  if (text.includes("?") || QUESTION.test(text)) return "soru";
+  if (SECOND_PERSON.test(text)) return "iddia";
+  // Urun kalibi buyuk harf arar, bu yuzden ham baslikta bakilir.
   if (PRODUCT_NAME.test(title)) return "duyuru";
   return "duz";
 };
+
+const HASHTAG = /#[\p{L}\p{N}_]+/gu;
+const TURKISH_LETTER = /[çğıöşüÇĞİÖŞÜ]/;
+// Turkce basliklarda neredeyse daima gecen kelimeler; ozel harf yoksa bunlara
+// bakilir ("RAM ne kadar olmali" gibi basliklarda ozel harf olmayabiliyor).
+const TURKISH_WORDS = wordsPattern([
+  "bir",
+  "bu",
+  "için",
+  "ile",
+  "var",
+  "yok",
+  "daha",
+  "çok",
+  "olur",
+  "olmaz",
+  "gerek",
+  "ne",
+]);
+
+/**
+ * Videonun Turkce olup olmadigi.
+ *
+ * regionCode ve relevanceLanguage yalnizca ipucu; arama Guney Sudan'dan
+ * ("SSD"), Hindistan'dan ("SSD TOURS") ve Brezilya'dan video dondurebiliyor.
+ * Dil alani doluysa ona guvenilir, degilse basliktan anlasilir.
+ */
+const isTurkish = (video) => {
+  const language =
+    video.snippet.defaultAudioLanguage ?? video.snippet.defaultLanguage;
+  if (language) return language.toLowerCase().startsWith("tr");
+
+  const title = video.snippet.title;
+  return (
+    TURKISH_LETTER.test(title) || TURKISH_WORDS.test(toTurkishLower(title))
+  );
+};
+
+/**
+ * Baslik ya da etiketler nisden bir terim iceriyor mu.
+ *
+ * Arama motoru "yapay zeka" derken mizah videosunu da dondurebiliyor; konuyu
+ * teknik terimle dogrulamak gerekiyor.
+ */
+const matchesNiche = (video, pattern) =>
+  pattern.test(
+    toTurkishLower(
+      [video.snippet.title, ...(video.snippet.tags ?? [])].join(" "),
+    ),
+  );
+
+/**
+ * Siralama puani: asim tek basina yanilticidir.
+ *
+ * Kucuk kanalin 6 bin izlenmesi x18 asim yapip listenin basina oturuyor, 500
+ * bin izlenmis gercek bir patlama x0,9 ile dibe dusuyor. Asimi izlenmenin
+ * buyuklugu ile carpmak ikisini ayni terazide tutar.
+ */
+const score = (outlier, views) =>
+  Number((outlier * Math.log10(views)).toFixed(1));
 
 const searchRecent = async (query, config, publishedAfter) => {
   const data = await request("search", {
@@ -190,6 +255,7 @@ const collectCandidates = async (config, windowHours, minViews) => {
   const publishedAfter = new Date(
     Date.now() - windowHours * 3600 * 1000,
   ).toISOString();
+  const niche = termsPattern(config.nicheTerms ?? []);
 
   const ids = new Set();
   for (const query of config.queries) {
@@ -205,11 +271,39 @@ const collectCandidates = async (config, windowHours, minViews) => {
     [...ids],
   );
 
+  // Neyin neden elendigi yazilir: filtre fazla sikiysa liste sessizce bosalmasin.
+  const reasons = { esik: 0, sure: 0, dil: 0, nis: 0, etiket: 0 };
+  const skip = (reason) => {
+    reasons[reason] += 1;
+    return false;
+  };
+
   const usable = videos.filter((video) => {
     const views = Number(video.statistics?.viewCount ?? 0);
-    const seconds = toSeconds(video.contentDetails.duration);
-    return views >= minViews && seconds <= config.maxDurationSeconds;
+    if (views < minViews) return skip("esik");
+    if (toSeconds(video.contentDetails.duration) > config.maxDurationSeconds) {
+      return skip("sure");
+    }
+    if (!isTurkish(video)) return skip("dil");
+    if (!matchesNiche(video, niche)) return skip("nis");
+    // Etiket yigini baslik neredeyse daima mizah/akis videosu demek.
+    if (
+      (video.snippet.title.match(HASHTAG) ?? []).length >
+      (config.maxHashtags ?? 3)
+    ) {
+      return skip("etiket");
+    }
+    return true;
   });
+
+  console.log(
+    "\n   elenen: " +
+      Object.entries(reasons)
+        .map(([reason, count]) => reason + " " + count)
+        .join(", ") +
+      " | kalan: " +
+      usable.length,
+  );
   if (usable.length === 0) return [];
 
   const channelIds = [
@@ -223,6 +317,7 @@ const collectCandidates = async (config, windowHours, minViews) => {
     const ageHours =
       (Date.now() - new Date(video.snippet.publishedAt).getTime()) / 3_600_000;
     const channel = byChannel.get(video.snippet.channelId);
+    const outlier = Number((views / averageViews(channel)).toFixed(1));
 
     return {
       videoId: video.id,
@@ -235,7 +330,8 @@ const collectCandidates = async (config, windowHours, minViews) => {
       ageHours: Math.max(0.5, ageHours),
       viewsPerHour: Math.round(views / Math.max(0.5, ageHours)),
       // Kanal ortalamasinin kac kati: asil sinyal bu.
-      outlier: Number((views / averageViews(channel)).toFixed(1)),
+      outlier,
+      score: score(outlier, views),
       shape: titleShape(video.snippet.title),
       durationInSeconds: toSeconds(video.contentDetails.duration),
     };
@@ -261,6 +357,7 @@ const limitPerChannel = (candidates, perChannel) => {
 const formatRow = (candidate, index) =>
   [
     String(index + 1).padStart(2) + ".",
+    String(candidate.score).padStart(6),
     ("x" + candidate.outlier).padStart(7),
     candidate.views.toLocaleString("tr-TR").padStart(9),
     (Math.round(candidate.ageHours) + " sa").padStart(6),
@@ -307,7 +404,7 @@ if (isDirectRun) {
   }
 
   const ranked = limitPerChannel(
-    candidates.sort((a, b) => b.outlier - a.outlier),
+    candidates.sort((a, b) => b.score - a.score),
     config.perChannelLimit ?? 2,
   ).slice(0, limit);
 
@@ -329,7 +426,7 @@ if (isDirectRun) {
     "utf8",
   );
 
-  console.log("\n  #     asim    izlenme    yas  kalip    baslik");
+  console.log("\n  #    puan     asim    izlenme    yas  kalip    baslik");
   console.log("  " + "-".repeat(100));
   ranked.forEach((candidate, index) =>
     console.log("  " + formatRow(candidate, index)),

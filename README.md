@@ -64,6 +64,12 @@ gore yapilir: 500 bin abonelinin 50 bin izlenmesi siradan, 2 bin abonelinin 50 b
 izlenmesi sinyaldir. Her baslik ayrica kalibina gore isaretlenir (soru / iddia /
 duyuru / duz); kanal verisinde kazananlar soru ve iddia, kaybedenler duyuru oldu.
 
+Arama sonucu ham haliyle kullanilamaz: "SSD" sorgusu Guney Sudan'dan, "yapay
+zeka" sorgusu mizah videolarindan sonuc dondurur. Bu yuzden her aday uc filtreden
+gecer -- dil (`defaultAudioLanguage`, yoksa basliktaki Turkce izler), nis
+(`nicheTerms` govdeleri, Turkce ekleriyle) ve etiket yigini. Terminalde neyin
+neden elendigi yazilir; filtre fazla sikiysa liste sessizce bosalmasin.
+
 Kota: her arama 100 birim, gunluk ucretsiz kota 10.000 birim. Varsayilan 10 arama
 gunde 1.000 birim harcar.
 

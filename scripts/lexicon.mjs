@@ -15,7 +15,7 @@
  *   - Bir brief kendi "lexicon" alaniyla ekleme yapabilir veya bir girdiyi
  *     ezebilir; degeri null verilen anahtar o videoda devre disi kalir.
  */
-import { WORD_END, WORD_START } from "./text.mjs";
+import { escapeRegExp, WORD_END, WORD_START } from "./text.mjs";
 
 export const lexicon = {
   // Bellek ve depolama
@@ -72,8 +72,6 @@ export const lexicon = {
   gigabit: "cigabit",
   gigahertz: "cigahertz",
 };
-
-const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const HAS_UPPERCASE = /\p{Lu}/u;
 
