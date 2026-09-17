@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Render ciktisi ve yerel Whisper kurulumu
+out
+whisper.cpp
+
+# Playwright MCP gecici kayitlari
+.playwright-mcp
+
+# Uretilen medya (produce.mjs brief'ten yeniden uretir)
+public/*.mp3
+public/*.mp4

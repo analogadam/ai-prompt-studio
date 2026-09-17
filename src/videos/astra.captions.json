@@ -1,0 +1,282 @@
+[
+  {
+    "text": "GPT-6",
+    "startMs": 98,
+    "endMs": 1145,
+    "timestampMs": 98,
+    "confidence": 1
+  },
+  {
+    "text": " Astra",
+    "startMs": 1145,
+    "endMs": 1502,
+    "timestampMs": 1145,
+    "confidence": 1
+  },
+  {
+    "text": " çıktı",
+    "startMs": 1502,
+    "endMs": 3012,
+    "timestampMs": 1502,
+    "confidence": 1
+  },
+  {
+    "text": " Bu",
+    "startMs": 3012,
+    "endMs": 3381,
+    "timestampMs": 3012,
+    "confidence": 1
+  },
+  {
+    "text": " sıradan",
+    "startMs": 3381,
+    "endMs": 3869,
+    "timestampMs": 3381,
+    "confidence": 1
+  },
+  {
+    "text": " bir",
+    "startMs": 3869,
+    "endMs": 4048,
+    "timestampMs": 3869,
+    "confidence": 1
+  },
+  {
+    "text": " güncelleme",
+    "startMs": 4048,
+    "endMs": 4631,
+    "timestampMs": 4048,
+    "confidence": 1
+  },
+  {
+    "text": " değil",
+    "startMs": 4631,
+    "endMs": 6036,
+    "timestampMs": 4631,
+    "confidence": 1
+  },
+  {
+    "text": " Astra",
+    "startMs": 6036,
+    "endMs": 6524,
+    "timestampMs": 6036,
+    "confidence": 1
+  },
+  {
+    "text": " bilgisayarı",
+    "startMs": 6524,
+    "endMs": 7143,
+    "timestampMs": 6524,
+    "confidence": 1
+  },
+  {
+    "text": " senin",
+    "startMs": 7143,
+    "endMs": 7440,
+    "timestampMs": 7143,
+    "confidence": 1
+  },
+  {
+    "text": " yerine",
+    "startMs": 7440,
+    "endMs": 7762,
+    "timestampMs": 7440,
+    "confidence": 1
+  },
+  {
+    "text": " kullanıyor",
+    "startMs": 7762,
+    "endMs": 8548,
+    "timestampMs": 7762,
+    "confidence": 1
+  },
+  {
+    "text": " işi",
+    "startMs": 8548,
+    "endMs": 8738,
+    "timestampMs": 8548,
+    "confidence": 1
+  },
+  {
+    "text": " anlatmıyor",
+    "startMs": 8738,
+    "endMs": 9595,
+    "timestampMs": 8738,
+    "confidence": 1
+  },
+  {
+    "text": " bitiriyor",
+    "startMs": 9595,
+    "endMs": 11226,
+    "timestampMs": 9595,
+    "confidence": 1
+  },
+  {
+    "text": " Bilgisayar",
+    "startMs": 11226,
+    "endMs": 12143,
+    "timestampMs": 11226,
+    "confidence": 1
+  },
+  {
+    "text": " testinde",
+    "startMs": 12143,
+    "endMs": 12631,
+    "timestampMs": 12143,
+    "confidence": 1
+  },
+  {
+    "text": " %72,6",
+    "startMs": 12631,
+    "endMs": 14393,
+    "timestampMs": 12631,
+    "confidence": 1
+  },
+  {
+    "text": " görev",
+    "startMs": 14393,
+    "endMs": 14726,
+    "timestampMs": 14393,
+    "confidence": 1
+  },
+  {
+    "text": " başına",
+    "startMs": 14726,
+    "endMs": 15095,
+    "timestampMs": 14726,
+    "confidence": 1
+  },
+  {
+    "text": " %47",
+    "startMs": 15095,
+    "endMs": 15857,
+    "timestampMs": 15095,
+    "confidence": 1
+  },
+  {
+    "text": " daha",
+    "startMs": 15857,
+    "endMs": 16071,
+    "timestampMs": 15857,
+    "confidence": 1
+  },
+  {
+    "text": " hızlı",
+    "startMs": 16071,
+    "endMs": 17560,
+    "timestampMs": 16071,
+    "confidence": 1
+  },
+  {
+    "text": " Bağlamı",
+    "startMs": 17560,
+    "endMs": 18226,
+    "timestampMs": 17560,
+    "confidence": 1
+  },
+  {
+    "text": " 1M token",
+    "startMs": 18226,
+    "endMs": 20250,
+    "timestampMs": 18226,
+    "confidence": 1
+  },
+  {
+    "text": " Ve",
+    "startMs": 20250,
+    "endMs": 20548,
+    "timestampMs": 20250,
+    "confidence": 1
+  },
+  {
+    "text": " siber",
+    "startMs": 20548,
+    "endMs": 20917,
+    "timestampMs": 20548,
+    "confidence": 1
+  },
+  {
+    "text": " güvenlikte",
+    "startMs": 20917,
+    "endMs": 21464,
+    "timestampMs": 20917,
+    "confidence": 1
+  },
+  {
+    "text": " kritik",
+    "startMs": 21464,
+    "endMs": 21833,
+    "timestampMs": 21464,
+    "confidence": 1
+  },
+  {
+    "text": " seviyeye",
+    "startMs": 21833,
+    "endMs": 22238,
+    "timestampMs": 21833,
+    "confidence": 1
+  },
+  {
+    "text": " ulaşan",
+    "startMs": 22238,
+    "endMs": 22750,
+    "timestampMs": 22238,
+    "confidence": 1
+  },
+  {
+    "text": " ilk",
+    "startMs": 22750,
+    "endMs": 22952,
+    "timestampMs": 22750,
+    "confidence": 1
+  },
+  {
+    "text": " model",
+    "startMs": 22952,
+    "endMs": 23548,
+    "timestampMs": 22952,
+    "confidence": 1
+  },
+  {
+    "text": " bu",
+    "startMs": 23548,
+    "endMs": 23726,
+    "timestampMs": 23548,
+    "confidence": 1
+  },
+  {
+    "text": " yüzden",
+    "startMs": 23726,
+    "endMs": 24071,
+    "timestampMs": 23726,
+    "confidence": 1
+  },
+  {
+    "text": " erişimi",
+    "startMs": 24071,
+    "endMs": 24440,
+    "timestampMs": 24071,
+    "confidence": 1
+  },
+  {
+    "text": " kısıtlı",
+    "startMs": 24440,
+    "endMs": 26083,
+    "timestampMs": 24440,
+    "confidence": 1
+  },
+  {
+    "text": " Yarış",
+    "startMs": 26083,
+    "endMs": 26583,
+    "timestampMs": 26083,
+    "confidence": 1
+  },
+  {
+    "text": " hızlandı",
+    "startMs": 26583,
+    "endMs": 27107,
+    "timestampMs": 26583,
+    "confidence": 1
+  }
+]

@@ -1,0 +1,106 @@
+/**
+ * Pexels'ten dikey b-roll klibi indirir ve public/ altina koyar.
+ *
+ *   node scripts/fetch-broll.mjs "ekran karti" gpu-kapak
+ *   node scripts/fetch-broll.mjs "data center servers" veri-merkezi --pick 2
+ *
+ * Pexels lisansi ticari kullanima ve atifsiz yayina izin verir; indirilen
+ * klipler kanalda dogrudan kullanilabilir.
+ *
+ * Anahtar: https://www.pexels.com/api/ adresinden ucretsiz alinir ve
+ * PEXELS_API_KEY ortam degiskenine ya da proje kokundeki .env dosyasina
+ * yazilir. Anahtar depoya girmemeli (.env zaten .gitignore icinde).
+ */
+import fs from "node:fs";
+import path from "node:path";
+
+const PUBLIC_DIR = "public";
+const MIN_WIDTH = 1080;
+const SEARCH_URL = "https://api.pexels.com/videos/search";
+
+const fail = (message) => {
+  console.error("\nHATA: " + message + "\n");
+  process.exit(1);
+};
+
+/** Anahtari ortamdan, yoksa .env dosyasindan okur. */
+const readApiKey = () => {
+  if (process.env.PEXELS_API_KEY) return process.env.PEXELS_API_KEY;
+
+  if (fs.existsSync(".env")) {
+    const line = fs
+      .readFileSync(".env", "utf8")
+      .split(/\r?\n/)
+      .find((row) => row.startsWith("PEXELS_API_KEY="));
+    if (line) return line.slice("PEXELS_API_KEY=".length).trim();
+  }
+
+  fail(
+    "PEXELS_API_KEY bulunamadi.\n" +
+      "https://www.pexels.com/api/ adresinden ucretsiz anahtar alip proje kokunde\n" +
+      '.env dosyasina "PEXELS_API_KEY=..." satiri olarak ekleyin.',
+  );
+};
+
+/**
+ * Dikey ve yeterince genis olan en iyi dosyayi secer.
+ * Pexels her video icin birden cok cozunurluk dondurur; Shorts icin 1080
+ * genisligin altina inilmez, gereksiz buyuk dosya da indirilmez.
+ */
+const pickVideoFile = (video) => {
+  const vertical = video.video_files
+    .filter((file) => file.height > file.width && file.width >= MIN_WIDTH)
+    .sort((a, b) => a.width - b.width);
+  return vertical[0] ?? null;
+};
+
+const [query, slug, ...flags] = process.argv.slice(2);
+if (!query || !slug) {
+  fail('Kullanim: node scripts/fetch-broll.mjs "<arama>" <dosya-adi> [--pick N]');
+}
+if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
+  fail("Dosya adi yalnizca kucuk harf, rakam ve tire icermeli: " + slug);
+}
+
+const pickIndex = Math.max(1, Number(flags[flags.indexOf("--pick") + 1]) || 1) - 1;
+const apiKey = readApiKey();
+
+const url = new URL(SEARCH_URL);
+url.searchParams.set("query", query);
+url.searchParams.set("orientation", "portrait");
+url.searchParams.set("per_page", "15");
+
+const response = await fetch(url, { headers: { Authorization: apiKey } });
+if (!response.ok) {
+  fail("Pexels istegi basarisiz (" + response.status + "): " + (await response.text()).slice(0, 200));
+}
+
+const { videos } = await response.json();
+const usable = videos.map((video) => ({ video, file: pickVideoFile(video) })).filter((x) => x.file);
+
+if (usable.length === 0) {
+  fail('"' + query + '" icin 1080 genisliginde dikey klip bulunamadi. Baska bir arama deneyin.');
+}
+
+console.log("\n" + usable.length + " uygun klip bulundu:");
+usable.forEach(({ video, file }, index) => {
+  const mark = index === pickIndex ? ">" : " ";
+  console.log(
+    "  " + mark + " " + (index + 1) + ". " + file.width + "x" + file.height +
+      ", " + video.duration + " sn, " + video.user.name + " -- " + video.url,
+  );
+});
+
+const chosen = usable[Math.min(pickIndex, usable.length - 1)];
+const target = path.join(PUBLIC_DIR, slug + ".mp4");
+
+console.log("\nIndiriliyor: " + target);
+const clip = await fetch(chosen.file.link);
+if (!clip.ok) fail("Klip indirilemedi (" + clip.status + ")");
+
+fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+fs.writeFileSync(target, Buffer.from(await clip.arrayBuffer()));
+
+const sizeMb = (fs.statSync(target).size / (1024 * 1024)).toFixed(1);
+console.log("Bitti: " + target + " (" + sizeMb + " MB, " + chosen.video.duration + " sn)");
+console.log('Brief icinde kullanim: { "type": "broll", "src": "' + slug + '.mp4" }');

@@ -1,0 +1,74 @@
+{
+  "slug": "vram-mi-islemci-mi",
+  "title": "Yapay zeka icin islemci degil VRAM alinir",
+  "format": "reels",
+  "voice": "tr-TR-AhmetNeural",
+  "rate": "+6%",
+  "background": {
+    "type": "aurora"
+  },
+  "narration": "Bilgisayarında yapay zeka çalıştırmak istiyorsun ve gidip en pahalı işlemciyi alıyorsun. Yanlış. Yapay zeka modelleri işlemcide değil, ekran kartının belleğinde çalışır. Buna VRAM denir. 7 milyar parametreli bir model, sıkıştırılmış halde yaklaşık 4 gigabayt VRAM ister. 13 milyarlık model 8 gigabayt. 30 milyarlık model 18 gigabayt. VRAM yetmezse model sistem belleğine taşar ve hız 10 kat düşer. Yani soru kaç çekirdek değil. Kaç gigabayt VRAM. Yarın: SSD zamanla neden yavaşlar?",
+  "scenes": [
+    {
+      "type": "broll",
+      "durationInSeconds": 7.2,
+      "src": "astra-bg.mp4",
+      "motion": "in",
+      "caption": "İşlemci almana gerek yok",
+      "highlight": "İşlemci"
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 6,
+      "src": "astra-bg.mp4",
+      "startFromInSeconds": 8,
+      "motion": "left",
+      "caption": "Model ekran kartında çalışır",
+      "highlight": "kartında"
+    },
+    {
+      "type": "stats",
+      "durationInSeconds": 11.5,
+      "heading": "Ne kadar VRAM gerekir?",
+      "stats": [
+        {
+          "value": 4,
+          "suffix": " GB",
+          "label": "7B model"
+        },
+        {
+          "value": 8,
+          "suffix": " GB",
+          "label": "13B model"
+        },
+        {
+          "value": 18,
+          "suffix": " GB",
+          "label": "30B model"
+        }
+      ],
+      "revealAtSeconds": [
+        1.5,
+        4.5,
+        7
+      ]
+    },
+    {
+      "type": "broll",
+      "durationInSeconds": 5,
+      "src": "astra-bg.mp4",
+      "startFromInSeconds": 18,
+      "motion": "out",
+      "caption": "Hız 10 kat düşer",
+      "highlight": "10"
+    },
+    {
+      "type": "outro",
+      "durationInSeconds": 7.5,
+      "summary": "Soru kaç çekirdek değil. Kaç gigabayt VRAM.",
+      "next": "SSD zamanla neden yavaşlar?",
+      "promise": "Her gün 3 teknoloji sorusu",
+      "cta": "Kanal ikonuna dokun"
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+[
+  {
+    "text": "Bilgisayarında",
+    "startMs": 97,
+    "endMs": 1147,
+    "timestampMs": 97,
+    "confidence": 1
+  },
+  {
+    "text": " yapay",
+    "startMs": 1147,
+    "endMs": 1465,
+    "timestampMs": 1147,
+    "confidence": 1
+  },
+  {
+    "text": " zeka",
+    "startMs": 1465,
+    "endMs": 1760,
+    "timestampMs": 1465,
+    "confidence": 1
+  },
+  {
+    "text": " çalıştırmak",
+    "startMs": 1760,
+    "endMs": 2350,
+    "timestampMs": 1760,
+    "confidence": 1
+  },
+  {
+    "text": " istiyorsun",
+    "startMs": 2350,
+    "endMs": 3175,
+    "timestampMs": 2350,
+    "confidence": 1
+  },
+  {
+    "text": " ve",
+    "startMs": 3175,
+    "endMs": 3293,
+    "timestampMs": 3175,
+    "confidence": 1
+  },
+  {
+    "text": " gidip",
+    "startMs": 3293,
+    "endMs": 3600,
+    "timestampMs": 3293,
+    "confidence": 1
+  },
+  {
+    "text": " en",
+    "startMs": 3600,
+    "endMs": 3765,
+    "timestampMs": 3600,
+    "confidence": 1
+  },
+  {
+    "text": " pahalı",
+    "startMs": 3765,
+    "endMs": 4059,
+    "timestampMs": 3765,
+    "confidence": 1
+  },
+  {
+    "text": " işlemciyi",
+    "startMs": 4059,
+    "endMs": 4566,
+    "timestampMs": 4059,
+    "confidence": 1
+  },
+  {
+    "text": " alıyorsun",
+    "startMs": 4566,
+    "endMs": 6215,
+    "timestampMs": 4566,
+    "confidence": 1
+  },
+  {
+    "text": " Yanlış",
+    "startMs": 6215,
+    "endMs": 7901,
+    "timestampMs": 6215,
+    "confidence": 1
+  },
+  {
+    "text": " Yapay",
+    "startMs": 7901,
+    "endMs": 8538,
+    "timestampMs": 7901,
+    "confidence": 1
+  },
+  {
+    "text": " zeka",
+    "startMs": 8538,
+    "endMs": 8868,
+    "timestampMs": 8538,
+    "confidence": 1
+  },
+  {
+    "text": " modelleri",
+    "startMs": 8868,
+    "endMs": 9340,
+    "timestampMs": 8868,
+    "confidence": 1
+  },
+  {
+    "text": " işlemcide",
+    "startMs": 9340,
+    "endMs": 9917,
+    "timestampMs": 9340,
+    "confidence": 1
+  },
+  {
+    "text": " değil",
+    "startMs": 9917,
+    "endMs": 10472,
+    "timestampMs": 9917,
+    "confidence": 1
+  },
+  {
+    "text": " ekran",
+    "startMs": 10472,
+    "endMs": 10825,
+    "timestampMs": 10472,
+    "confidence": 1
+  },
+  {
+    "text": " kartının",
+    "startMs": 10825,
+    "endMs": 11285,
+    "timestampMs": 10825,
+    "confidence": 1
+  },
+  {
+    "text": " belleğinde",
+    "startMs": 11285,
+    "endMs": 11769,
+    "timestampMs": 11285,
+    "confidence": 1
+  },
+  {
+    "text": " çalışır",
+    "startMs": 11769,
+    "endMs": 13373,
+    "timestampMs": 11769,
+    "confidence": 1
+  },
+  {
+    "text": " Buna",
+    "startMs": 13373,
+    "endMs": 13856,
+    "timestampMs": 13373,
+    "confidence": 1
+  },
+  {
+    "text": " VRAM",
+    "startMs": 13856,
+    "endMs": 14198,
+    "timestampMs": 13856,
+    "confidence": 1
+  },
+  {
+    "text": " denir",
+    "startMs": 14198,
+    "endMs": 15578,
+    "timestampMs": 14198,
+    "confidence": 1
+  },
+  {
+    "text": " 7",
+    "startMs": 15578,
+    "endMs": 15967,
+    "timestampMs": 15578,
+    "confidence": 1
+  },
+  {
+    "text": " milyar",
+    "startMs": 15967,
+    "endMs": 16321,
+    "timestampMs": 15967,
+    "confidence": 1
+  },
+  {
+    "text": " parametreli",
+    "startMs": 16321,
+    "endMs": 16875,
+    "timestampMs": 16321,
+    "confidence": 1
+  },
+  {
+    "text": " bir",
+    "startMs": 16875,
+    "endMs": 17016,
+    "timestampMs": 16875,
+    "confidence": 1
+  },
+  {
+    "text": " model",
+    "startMs": 17016,
+    "endMs": 17571,
+    "timestampMs": 17016,
+    "confidence": 1
+  },
+  {
+    "text": " sıkıştırılmış",
+    "startMs": 17571,
+    "endMs": 18361,
+    "timestampMs": 17571,
+    "confidence": 1
+  },
+  {
+    "text": " halde",
+    "startMs": 18361,
+    "endMs": 18632,
+    "timestampMs": 18361,
+    "confidence": 1
+  },
+  {
+    "text": " yaklaşık",
+    "startMs": 18632,
+    "endMs": 19104,
+    "timestampMs": 18632,
+    "confidence": 1
+  },
+  {
+    "text": " 4",
+    "startMs": 19104,
+    "endMs": 19351,
+    "timestampMs": 19104,
+    "confidence": 1
+  },
+  {
+    "text": " gigabayt",
+    "startMs": 19351,
+    "endMs": 19823,
+    "timestampMs": 19351,
+    "confidence": 1
+  },
+  {
+    "text": " VRAM",
+    "startMs": 19823,
+    "endMs": 20106,
+    "timestampMs": 19823,
+    "confidence": 1
+  },
+  {
+    "text": " ister",
+    "startMs": 20106,
+    "endMs": 21568,
+    "timestampMs": 20106,
+    "confidence": 1
+  },
+  {
+    "text": " 13",
+    "startMs": 21568,
+    "endMs": 22134,
+    "timestampMs": 21568,
+    "confidence": 1
+  },
+  {
+    "text": " milyarlık",
+    "startMs": 22134,
+    "endMs": 22606,
+    "timestampMs": 22134,
+    "confidence": 1
+  },
+  {
+    "text": " model",
+    "startMs": 22606,
+    "endMs": 22960,
+    "timestampMs": 22606,
+    "confidence": 1
+  },
+  {
+    "text": " 8",
+    "startMs": 22960,
+    "endMs": 23278,
+    "timestampMs": 22960,
+    "confidence": 1
+  },
+  {
+    "text": " gigabayt",
+    "startMs": 23278,
+    "endMs": 24823,
+    "timestampMs": 23278,
+    "confidence": 1
+  },
+  {
+    "text": " 30",
+    "startMs": 24823,
+    "endMs": 25342,
+    "timestampMs": 24823,
+    "confidence": 1
+  },
+  {
+    "text": " milyarlık",
+    "startMs": 25342,
+    "endMs": 25837,
+    "timestampMs": 25342,
+    "confidence": 1
+  },
+  {
+    "text": " model",
+    "startMs": 25837,
+    "endMs": 26215,
+    "timestampMs": 25837,
+    "confidence": 1
+  },
+  {
+    "text": " 18",
+    "startMs": 26215,
+    "endMs": 26710,
+    "timestampMs": 26215,
+    "confidence": 1
+  },
+  {
+    "text": " gigabayt",
+    "startMs": 26710,
+    "endMs": 28278,
+    "timestampMs": 26710,
+    "confidence": 1
+  },
+  {
+    "text": " VRAM",
+    "startMs": 28278,
+    "endMs": 28844,
+    "timestampMs": 28278,
+    "confidence": 1
+  },
+  {
+    "text": " yetmezse",
+    "startMs": 28844,
+    "endMs": 29410,
+    "timestampMs": 28844,
+    "confidence": 1
+  },
+  {
+    "text": " model",
+    "startMs": 29410,
+    "endMs": 29764,
+    "timestampMs": 29410,
+    "confidence": 1
+  },
+  {
+    "text": " sistem",
+    "startMs": 29764,
+    "endMs": 30200,
+    "timestampMs": 29764,
+    "confidence": 1
+  },
+  {
+    "text": " belleğine",
+    "startMs": 30200,
+    "endMs": 30625,
+    "timestampMs": 30200,
+    "confidence": 1
+  },
+  {
+    "text": " taşar",
+    "startMs": 30625,
+    "endMs": 31156,
+    "timestampMs": 30625,
+    "confidence": 1
+  },
+  {
+    "text": " ve",
+    "startMs": 31156,
+    "endMs": 31262,
+    "timestampMs": 31156,
+    "confidence": 1
+  },
+  {
+    "text": " hız",
+    "startMs": 31262,
+    "endMs": 31498,
+    "timestampMs": 31262,
+    "confidence": 1
+  },
+  {
+    "text": " 10",
+    "startMs": 31498,
+    "endMs": 31663,
+    "timestampMs": 31498,
+    "confidence": 1
+  },
+  {
+    "text": " kat",
+    "startMs": 31663,
+    "endMs": 31875,
+    "timestampMs": 31663,
+    "confidence": 1
+  },
+  {
+    "text": " düşer",
+    "startMs": 31875,
+    "endMs": 33349,
+    "timestampMs": 31875,
+    "confidence": 1
+  },
+  {
+    "text": " Yani",
+    "startMs": 33349,
+    "endMs": 33892,
+    "timestampMs": 33349,
+    "confidence": 1
+  },
+  {
+    "text": " soru",
+    "startMs": 33892,
+    "endMs": 34163,
+    "timestampMs": 33892,
+    "confidence": 1
+  },
+  {
+    "text": " kaç",
+    "startMs": 34163,
+    "endMs": 34410,
+    "timestampMs": 34163,
+    "confidence": 1
+  },
+  {
+    "text": " çekirdek",
+    "startMs": 34410,
+    "endMs": 34882,
+    "timestampMs": 34410,
+    "confidence": 1
+  },
+  {
+    "text": " değil",
+    "startMs": 34882,
+    "endMs": 36285,
+    "timestampMs": 34882,
+    "confidence": 1
+  },
+  {
+    "text": " Kaç",
+    "startMs": 36285,
+    "endMs": 36698,
+    "timestampMs": 36285,
+    "confidence": 1
+  },
+  {
+    "text": " gigabayt",
+    "startMs": 36698,
+    "endMs": 37182,
+    "timestampMs": 36698,
+    "confidence": 1
+  },
+  {
+    "text": " VRAM",
+    "startMs": 37182,
+    "endMs": 38608,
+    "timestampMs": 37182,
+    "confidence": 1
+  },
+  {
+    "text": " Yarın",
+    "startMs": 38608,
+    "endMs": 39257,
+    "timestampMs": 38608,
+    "confidence": 1
+  },
+  {
+    "text": " SSD",
+    "startMs": 39257,
+    "endMs": 39741,
+    "timestampMs": 39257,
+    "confidence": 1
+  },
+  {
+    "text": " zamanla",
+    "startMs": 39741,
+    "endMs": 40212,
+    "timestampMs": 39741,
+    "confidence": 1
+  },
+  {
+    "text": " neden",
+    "startMs": 40212,
+    "endMs": 40566,
+    "timestampMs": 40212,
+    "confidence": 1
+  },
+  {
+    "text": " yavaşlar",
+    "startMs": 40566,
+    "endMs": 41120,
+    "timestampMs": 40566,
+    "confidence": 1
+  }
+]
