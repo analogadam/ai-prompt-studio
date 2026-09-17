@@ -3,7 +3,7 @@
  *
  * Kullanim:
  *   node scripts/transcribe.mjs public/konusma.mp4
- *   node scripts/transcribe.mjs public/konusma.mp4 src/videos/konusma.captions.json
+ *   node scripts/transcribe.mjs public/konusma.mp4 src/videos/konusma/captions.json
  *
  * Ortam degiskenleri:
  *   WHISPER_MODEL     tiny | base | small | medium | large-v3-turbo   (varsayilan: base)
@@ -46,7 +46,7 @@ if (!fs.existsSync(input)) {
 
 const output =
   outputArg ??
-  path.join("src", "videos", `${path.basename(input, path.extname(input))}.captions.json`);
+  path.join("src", "videos", path.basename(input, path.extname(input)), "captions.json");
 
 // Whisper.cpp yalnizca 16 kHz mono 16-bit WAV kabul eder.
 const wavPath = path.join(os.tmpdir(), `remotion-transcribe-${Date.now()}.wav`);

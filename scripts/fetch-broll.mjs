@@ -1,8 +1,9 @@
 /**
- * Pexels'ten dikey b-roll klibi indirir ve public/ altina koyar.
+ * Pexels'ten dikey b-roll klibi indirir ve videonun kendi medya klasorune
+ * (public/<video-slug>/) koyar.
  *
- *   node scripts/fetch-broll.mjs "ekran karti" gpu-kapak
- *   node scripts/fetch-broll.mjs "data center servers" veri-merkezi --pick 2
+ *   node scripts/fetch-broll.mjs "ekran karti" vram-mi-islemci-mi gpu-kapak
+ *   node scripts/fetch-broll.mjs "data center servers" ssd-neden-yavaslar raf --pick 2
  *
  * Pexels lisansi ticari kullanima ve atifsiz yayina izin verir; indirilen
  * klipler kanalda dogrudan kullanilabilir.
@@ -15,6 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const PUBLIC_DIR = "public";
+const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const MIN_WIDTH = 1080;
 const SEARCH_URL = "https://api.pexels.com/videos/search";
 
@@ -54,13 +56,16 @@ const pickVideoFile = (video) => {
   return vertical[0] ?? null;
 };
 
-const [query, slug, ...flags] = process.argv.slice(2);
-if (!query || !slug) {
-  fail('Kullanim: node scripts/fetch-broll.mjs "<arama>" <dosya-adi> [--pick N]');
+const [query, videoSlug, clipName, ...flags] = process.argv.slice(2);
+if (!query || !videoSlug || !clipName) {
+  fail('Kullanim: node scripts/fetch-broll.mjs "<arama>" <video-slug> <klip-adi> [--pick N]');
 }
-if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
-  fail("Dosya adi yalnizca kucuk harf, rakam ve tire icermeli: " + slug);
+for (const name of [videoSlug, clipName]) {
+  if (!SLUG_PATTERN.test(name)) {
+    fail("Ad yalnizca kucuk harf, rakam ve tire icermeli: " + name);
+  }
 }
+const targetDir = path.join(PUBLIC_DIR, videoSlug);
 
 const pickIndex = Math.max(1, Number(flags[flags.indexOf("--pick") + 1]) || 1) - 1;
 const apiKey = readApiKey();
@@ -92,15 +97,15 @@ usable.forEach(({ video, file }, index) => {
 });
 
 const chosen = usable[Math.min(pickIndex, usable.length - 1)];
-const target = path.join(PUBLIC_DIR, slug + ".mp4");
+const target = path.join(targetDir, clipName + ".mp4");
 
 console.log("\nIndiriliyor: " + target);
 const clip = await fetch(chosen.file.link);
 if (!clip.ok) fail("Klip indirilemedi (" + clip.status + ")");
 
-fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+fs.mkdirSync(targetDir, { recursive: true });
 fs.writeFileSync(target, Buffer.from(await clip.arrayBuffer()));
 
 const sizeMb = (fs.statSync(target).size / (1024 * 1024)).toFixed(1);
 console.log("Bitti: " + target + " (" + sizeMb + " MB, " + chosen.video.duration + " sn)");
-console.log('Brief icinde kullanim: { "type": "broll", "src": "' + slug + '.mp4" }');
+console.log('Brief icinde kullanim: { "type": "broll", "src": "' + clipName + '.mp4" }');

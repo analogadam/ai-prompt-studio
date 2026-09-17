@@ -1,5 +1,5 @@
-import type { VideoData } from "../scenes/types";
-import captions from "./astra.captions.json";
+import type { VideoData } from "../../scenes/types";
+import captions from "./captions.json";
 
 /**
  * 30 saniyelik dikey YouTube Shorts: OpenAI GPT-6 Astra (3 Eylul 2026).
@@ -20,8 +20,8 @@ import captions from "./astra.captions.json";
  */
 const video: VideoData = {
   format: "reels",
-  background: { type: "video", src: "astra-bg.mp4", opacity: 1, blur: 4 },
-  voiceoverSrc: "astra-vo.mp3",
+  background: { type: "video", src: "astra-shorts/astra-bg.mp4", opacity: 1, blur: 4 },
+  voiceoverSrc: "astra-shorts/vo.mp3",
   captions,
   scenes: [
     {

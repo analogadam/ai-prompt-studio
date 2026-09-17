@@ -1,17 +1,27 @@
 # Remotion Video Sistemi
 
-Brief'ten bitmis Shorts ureten hat. Bir video, `briefs/` altinda tek bir JSON
-dosyasidir; gerisini `scripts/produce.mjs` yapar.
+Brief'ten bitmis Shorts ureten hat. Bir video kendi klasorunde yasar: elle
+yazilan tek dosya `src/videos/<slug>/brief.json`, gerisini `scripts/produce.mjs`
+uretir.
 
 ## Uctan uca uretim
 
 ```bash
-node scripts/produce.mjs briefs/ornek.json              # seslendirmeden mp4'e
-node scripts/produce.mjs briefs/ornek.json --no-render  # sadece onizleme icin hazirla
+node scripts/produce.mjs src/videos/ornek/brief.json              # seslendirmeden mp4'e
+node scripts/produce.mjs src/videos/ornek/brief.json --no-render  # sadece onizleme icin
 ```
 
 Sirasiyla: seslendirme + kelime zamanli altyazi (`tts.py`) -> zamanlama
-oturtma -> `src/videos/<slug>.ts` -> kayit defteri -> render.
+oturtma -> `src/videos/<slug>/video.ts` -> kayit defteri -> render.
+
+Bir videonun dosyalari iki klasore dagilir; medya, Remotion `staticFile()` ile
+yalnizca `public/` altindan okuyabildigi icin ayri durur:
+
+```
+src/videos/<slug>/   brief.json (kaynak) + video.ts, captions.json (uretilmis)
+public/<slug>/       vo.mp3 + b-roll klipleri
+out/<slug>.mp4       render
+```
 
 ### Brief alanlari
 
@@ -46,7 +56,7 @@ Metin katmanlari cakismasin diye alan paylasimi sabittir: **manset ustte**,
 | Komut | Ne yapar |
 |---|---|
 | `npm run dev` | Remotion Studio -- canli onizleme |
-| `node scripts/fetch-broll.mjs "arama" dosya-adi` | Pexels'ten dikey b-roll indirir |
+| `node scripts/fetch-broll.mjs "arama" <slug> <klip-adi>` | Pexels'ten dikey b-roll indirir, `public/<slug>/` altina koyar |
 | `node scripts/build-registry.mjs` | `src/videos/index.ts`'i yeniden uretir |
 | `npx remotion still <Kimlik> out/kontrol.png --frame=60` | Tek kare (hizli gorsel kontrol) |
 | `node scripts/transcribe.mjs public/ses.mp4` | Disaridan gelen kayittan altyazi |
@@ -54,7 +64,6 @@ Metin katmanlari cakismasin diye alan paylasimi sabittir: **manset ustte**,
 ## Yapi
 
 ```
-briefs/            her video bir JSON  <- yeni videolar buraya
 src/
   format.ts        youtube (16:9) / reels (9:16) / square (1:1)
   theme.ts         renk ve font
@@ -63,9 +72,10 @@ src/
   Subtitles.tsx    karaoke altyazi katmani
   Background.tsx   aurora / video zemin
   scenes/          types.ts + Broll / Title / Bullets / Stats / Clip / Outro
-  videos/          uretilmis video verileri + index.ts (URETILMIS, elle duzenlenmez)
+  videos/<slug>/   brief.json + uretilmis video.ts, captions.json
+  videos/index.ts  kayit defteri (URETILMIS, elle duzenlenmez)
   Root.tsx         kompozisyonlari index.ts'ten okur
-public/            video, ses ve gorsel dosyalari
+public/<slug>/     videonun sesi ve klipleri (staticFile buradan okur)
 scripts/
   produce.mjs      uctan uca uretim
   lexicon.mjs      telaffuz sozlugu (VRAM -> "vi ram")
@@ -88,5 +98,6 @@ scripts/
 - Ilk `transcribe.mjs` calistirmasi agirdir: Whisper.cpp kaynaktan derlenir ve model
   indirilir. Varsayilan `base` (~150 MB); daha yuksek dogruluk icin
   `WHISPER_MODEL=medium node scripts/transcribe.mjs ...` (~1.5 GB).
-- Video/ses dosyalari `public/` altinda olmali; kodda `staticFile()` ile yalnizca dosya adi verilir.
+- Video/ses dosyalari `public/<slug>/` altinda olmali. Brief icinde yalnizca dosya
+  adi yazilir (`ekran-karti.mp4`); klasorlu yolu `produce.mjs` kurar.
 - Remotion 3 kisiye kadar ekiplerde ucretsizdir; sirket kullanimi icin lisans gerekir.

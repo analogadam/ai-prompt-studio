@@ -20,10 +20,10 @@ Kullanicidan su uc seyi cikar. Eksikse **sorma, varsay ve varsayimini soyle**:
 
 ## 2. Video dosyasini yaz
 
-`src/videos/<slug>.ts` olustur:
+`src/videos/<slug>/video.ts` olustur (her video kendi klasorunde):
 
 ```ts
-import type { VideoData } from "../scenes/types";
+import type { VideoData } from "../../scenes/types";
 
 export const urunTanitim: VideoData = {
   format: "reels",
@@ -51,7 +51,7 @@ Anahtar, render komutundaki kimliktir. Toplam sure otomatik hesaplanir; `duratio
 
 - `title` — `title`, opsiyonel `subtitle`
 - `bullets` — `heading`, `bullets: string[]` (3-5 madde ideal, madde basina en fazla ~60 karakter)
-- `clip` — `src` (public/ altindaki dosya adi), opsiyonel `startFromInSeconds`, opsiyonel `label`
+- `clip` — `src` (`public/<slug>/` altindaki dosya adi), opsiyonel `startFromInSeconds`, opsiyonel `label`
 
 Video seviyesinde: `transitionInSeconds` (varsayilan 0.4, `0` verirsen gecis olmaz), `voiceoverSrc`, `captions`.
 
@@ -75,10 +75,10 @@ Elinde ses/konusma varsa:
 node scripts/transcribe.mjs public/konusma.mp4
 ```
 
-`src/videos/konusma.captions.json` uretir. Video dosyasinda kullan:
+`src/videos/konusma/captions.json` uretir. Video dosyasinda kullan:
 
 ```ts
-import captions from "./konusma.captions.json";
+import captions from "./captions.json";
 
 export const anlatim: VideoData = {
   format: "reels",
@@ -93,14 +93,14 @@ Turkce varsayilandir. Daha hizli ve kucuk model icin `WHISPER_MODEL=small`.
 
 ## 6. Uzun videodan kisa klip
 
-1. Uzun kaydi `public/` altina koy
-2. `node scripts/transcribe.mjs public/uzun.mp4` ile transkript cikar
+1. Uzun kaydi `public/<slug>/` altina koy
+2. `node scripts/transcribe.mjs public/uzun/kayit.mp4 src/videos/uzun/captions.json` ile transkript cikar
 3. Transkript JSON'unu oku, kullanicinin verdigi kritere gore (yoksa "en carpici cumle") 3-5 an sec
 4. Her an icin bir video dosyasi yaz -- kaynagi kesmene gerek yok, `clip` sahnesi zaten kirpar:
 
 ```ts
-import { sliceCaptions } from "../captions";
-import captions from "./uzun.captions.json";
+import { sliceCaptions } from "../../captions";
+import captions from "./captions.json";
 
 const START = 754;
 const DURATION = 42;
@@ -108,7 +108,7 @@ const DURATION = 42;
 export const klip1: VideoData = {
   format: "reels",
   captions: sliceCaptions({ captions, startInSeconds: START, durationInSeconds: DURATION }),
-  scenes: [{ type: "clip", durationInSeconds: DURATION, src: "uzun.mp4", startFromInSeconds: START }],
+  scenes: [{ type: "clip", durationInSeconds: DURATION, src: "uzun/kayit.mp4", startFromInSeconds: START }],
 };
 ```
 

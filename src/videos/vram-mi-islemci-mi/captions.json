@@ -219,274 +219,274 @@
   {
     "text": " yaklaşık",
     "startMs": 18632,
-    "endMs": 19104,
+    "endMs": 19092,
     "timestampMs": 18632,
     "confidence": 1
   },
   {
     "text": " 4",
-    "startMs": 19104,
-    "endMs": 19351,
-    "timestampMs": 19104,
+    "startMs": 19092,
+    "endMs": 19340,
+    "timestampMs": 19092,
     "confidence": 1
   },
   {
     "text": " gigabayt",
-    "startMs": 19351,
-    "endMs": 19823,
-    "timestampMs": 19351,
+    "startMs": 19340,
+    "endMs": 19847,
+    "timestampMs": 19340,
     "confidence": 1
   },
   {
     "text": " VRAM",
-    "startMs": 19823,
-    "endMs": 20106,
-    "timestampMs": 19823,
+    "startMs": 19847,
+    "endMs": 20130,
+    "timestampMs": 19847,
     "confidence": 1
   },
   {
     "text": " ister",
-    "startMs": 20106,
-    "endMs": 21568,
-    "timestampMs": 20106,
+    "startMs": 20130,
+    "endMs": 21592,
+    "timestampMs": 20130,
     "confidence": 1
   },
   {
     "text": " 13",
-    "startMs": 21568,
-    "endMs": 22134,
-    "timestampMs": 21568,
+    "startMs": 21592,
+    "endMs": 22170,
+    "timestampMs": 21592,
     "confidence": 1
   },
   {
     "text": " milyarlık",
-    "startMs": 22134,
-    "endMs": 22606,
-    "timestampMs": 22134,
+    "startMs": 22170,
+    "endMs": 22642,
+    "timestampMs": 22170,
     "confidence": 1
   },
   {
     "text": " model",
-    "startMs": 22606,
-    "endMs": 22960,
-    "timestampMs": 22606,
+    "startMs": 22642,
+    "endMs": 22995,
+    "timestampMs": 22642,
     "confidence": 1
   },
   {
     "text": " 8",
-    "startMs": 22960,
-    "endMs": 23278,
-    "timestampMs": 22960,
+    "startMs": 22995,
+    "endMs": 23290,
+    "timestampMs": 22995,
     "confidence": 1
   },
   {
     "text": " gigabayt",
-    "startMs": 23278,
-    "endMs": 24823,
-    "timestampMs": 23278,
+    "startMs": 23290,
+    "endMs": 24882,
+    "timestampMs": 23290,
     "confidence": 1
   },
   {
     "text": " 30",
-    "startMs": 24823,
-    "endMs": 25342,
-    "timestampMs": 24823,
+    "startMs": 24882,
+    "endMs": 25401,
+    "timestampMs": 24882,
     "confidence": 1
   },
   {
     "text": " milyarlık",
-    "startMs": 25342,
-    "endMs": 25837,
-    "timestampMs": 25342,
+    "startMs": 25401,
+    "endMs": 25896,
+    "timestampMs": 25401,
     "confidence": 1
   },
   {
     "text": " model",
-    "startMs": 25837,
-    "endMs": 26215,
-    "timestampMs": 25837,
+    "startMs": 25896,
+    "endMs": 26274,
+    "timestampMs": 25896,
     "confidence": 1
   },
   {
     "text": " 18",
-    "startMs": 26215,
-    "endMs": 26710,
-    "timestampMs": 26215,
+    "startMs": 26274,
+    "endMs": 26757,
+    "timestampMs": 26274,
     "confidence": 1
   },
   {
     "text": " gigabayt",
-    "startMs": 26710,
-    "endMs": 28278,
-    "timestampMs": 26710,
+    "startMs": 26757,
+    "endMs": 28349,
+    "timestampMs": 26757,
     "confidence": 1
   },
   {
     "text": " VRAM",
-    "startMs": 28278,
-    "endMs": 28844,
-    "timestampMs": 28278,
+    "startMs": 28349,
+    "endMs": 28915,
+    "timestampMs": 28349,
     "confidence": 1
   },
   {
     "text": " yetmezse",
-    "startMs": 28844,
-    "endMs": 29410,
-    "timestampMs": 28844,
+    "startMs": 28915,
+    "endMs": 29481,
+    "timestampMs": 28915,
     "confidence": 1
   },
   {
     "text": " model",
-    "startMs": 29410,
-    "endMs": 29764,
-    "timestampMs": 29410,
+    "startMs": 29481,
+    "endMs": 29835,
+    "timestampMs": 29481,
     "confidence": 1
   },
   {
     "text": " sistem",
-    "startMs": 29764,
-    "endMs": 30200,
-    "timestampMs": 29764,
+    "startMs": 29835,
+    "endMs": 30271,
+    "timestampMs": 29835,
     "confidence": 1
   },
   {
     "text": " belleğine",
-    "startMs": 30200,
-    "endMs": 30625,
-    "timestampMs": 30200,
+    "startMs": 30271,
+    "endMs": 30696,
+    "timestampMs": 30271,
     "confidence": 1
   },
   {
     "text": " taşar",
-    "startMs": 30625,
-    "endMs": 31156,
-    "timestampMs": 30625,
+    "startMs": 30696,
+    "endMs": 31226,
+    "timestampMs": 30696,
     "confidence": 1
   },
   {
     "text": " ve",
-    "startMs": 31156,
-    "endMs": 31262,
-    "timestampMs": 31156,
+    "startMs": 31226,
+    "endMs": 31333,
+    "timestampMs": 31226,
     "confidence": 1
   },
   {
     "text": " hız",
-    "startMs": 31262,
-    "endMs": 31498,
-    "timestampMs": 31262,
+    "startMs": 31333,
+    "endMs": 31568,
+    "timestampMs": 31333,
     "confidence": 1
   },
   {
     "text": " 10",
-    "startMs": 31498,
-    "endMs": 31663,
-    "timestampMs": 31498,
+    "startMs": 31568,
+    "endMs": 31734,
+    "timestampMs": 31568,
     "confidence": 1
   },
   {
     "text": " kat",
-    "startMs": 31663,
-    "endMs": 31875,
-    "timestampMs": 31663,
+    "startMs": 31734,
+    "endMs": 31946,
+    "timestampMs": 31734,
     "confidence": 1
   },
   {
     "text": " düşer",
-    "startMs": 31875,
-    "endMs": 33349,
-    "timestampMs": 31875,
+    "startMs": 31946,
+    "endMs": 33420,
+    "timestampMs": 31946,
     "confidence": 1
   },
   {
     "text": " Yani",
-    "startMs": 33349,
-    "endMs": 33892,
-    "timestampMs": 33349,
+    "startMs": 33420,
+    "endMs": 33962,
+    "timestampMs": 33420,
     "confidence": 1
   },
   {
     "text": " soru",
-    "startMs": 33892,
-    "endMs": 34163,
-    "timestampMs": 33892,
+    "startMs": 33962,
+    "endMs": 34234,
+    "timestampMs": 33962,
     "confidence": 1
   },
   {
     "text": " kaç",
-    "startMs": 34163,
-    "endMs": 34410,
-    "timestampMs": 34163,
+    "startMs": 34234,
+    "endMs": 34481,
+    "timestampMs": 34234,
     "confidence": 1
   },
   {
     "text": " çekirdek",
-    "startMs": 34410,
-    "endMs": 34882,
-    "timestampMs": 34410,
+    "startMs": 34481,
+    "endMs": 34953,
+    "timestampMs": 34481,
     "confidence": 1
   },
   {
     "text": " değil",
-    "startMs": 34882,
-    "endMs": 36285,
-    "timestampMs": 34882,
+    "startMs": 34953,
+    "endMs": 36356,
+    "timestampMs": 34953,
     "confidence": 1
   },
   {
     "text": " Kaç",
-    "startMs": 36285,
+    "startMs": 36356,
     "endMs": 36698,
-    "timestampMs": 36285,
+    "timestampMs": 36356,
     "confidence": 1
   },
   {
     "text": " gigabayt",
     "startMs": 36698,
-    "endMs": 37182,
+    "endMs": 37217,
     "timestampMs": 36698,
     "confidence": 1
   },
   {
     "text": " VRAM",
-    "startMs": 37182,
-    "endMs": 38608,
-    "timestampMs": 37182,
+    "startMs": 37217,
+    "endMs": 38644,
+    "timestampMs": 37217,
     "confidence": 1
   },
   {
     "text": " Yarın",
-    "startMs": 38608,
-    "endMs": 39257,
-    "timestampMs": 38608,
+    "startMs": 38644,
+    "endMs": 39292,
+    "timestampMs": 38644,
     "confidence": 1
   },
   {
     "text": " SSD",
-    "startMs": 39257,
-    "endMs": 39741,
-    "timestampMs": 39257,
+    "startMs": 39292,
+    "endMs": 39776,
+    "timestampMs": 39292,
     "confidence": 1
   },
   {
     "text": " zamanla",
-    "startMs": 39741,
-    "endMs": 40212,
-    "timestampMs": 39741,
+    "startMs": 39776,
+    "endMs": 40248,
+    "timestampMs": 39776,
     "confidence": 1
   },
   {
     "text": " neden",
-    "startMs": 40212,
-    "endMs": 40566,
-    "timestampMs": 40212,
+    "startMs": 40248,
+    "endMs": 40601,
+    "timestampMs": 40248,
     "confidence": 1
   },
   {
     "text": " yavaşlar",
-    "startMs": 40566,
-    "endMs": 41120,
-    "timestampMs": 40566,
+    "startMs": 40601,
+    "endMs": 41156,
+    "timestampMs": 40601,
     "confidence": 1
   }
 ]

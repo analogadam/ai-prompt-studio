@@ -11,5 +11,5 @@ whisper.cpp
 .playwright-mcp
 
 # Uretilen medya (produce.mjs brief'ten yeniden uretir)
-public/*.mp3
-public/*.mp4
+public/**/*.mp3
+public/**/*.mp4

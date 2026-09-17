@@ -2,8 +2,12 @@
  * Bir brief dosyasindan bitmis Shorts uretir:
  * seslendirme -> altyazi -> zamanlama -> video verisi -> kayit defteri -> render.
  *
- *   node scripts/produce.mjs briefs/ornek.json
- *   node scripts/produce.mjs briefs/ornek.json --no-render
+ *   node scripts/produce.mjs src/videos/ornek/brief.json
+ *   node scripts/produce.mjs src/videos/ornek/brief.json --no-render
+ *
+ * Bir videonun butun dosyalari kendi klasorunde durur:
+ *   src/videos/<slug>/   brief.json, video.ts, captions.json
+ *   public/<slug>/       vo.mp3 ve b-roll klipleri (staticFile buradan okur)
  *
  * Brief alanlari:
  *   slug          Dosya ve kompozisyon adinin kaynagi ("vram-mi-islemci-mi")
@@ -42,6 +46,13 @@ const toPascalCase = (slug) =>
     .filter(Boolean)
     .map((part) => part[0].toUpperCase() + part.slice(1))
     .join("");
+
+/**
+ * Medya dosyalari public/<slug>/ altinda durur. Brief icinde yalnizca dosya
+ * adi yazilir ("ekran-karti.mp4"); staticFile'in bekledigi klasorlu yol burada
+ * kurulur. Zaten klasor iceren degerler oldugu gibi birakilir.
+ */
+const toMediaPath = (slug, file) => (file.includes("/") ? file : slug + "/" + file);
 
 /** Kareye oturtur: ara degerler sahne sinirlarinda yarim kare kaymaya yol acar. */
 const toFrameExact = (seconds) => Math.round(seconds * FPS) / FPS;
@@ -179,30 +190,38 @@ const checkTiming = (brief, speechSeconds) => {
 };
 
 /**
- * Video verisini src/videos/<slug>.ts olarak yazar.
+ * Video verisini src/videos/<slug>/video.ts olarak yazar.
  *
- * captions alani JSON icine gomulemez; uretilen .captions.json dosyasindan
+ * captions alani JSON icine gomulemez; uretilen captions.json dosyasindan
  * import edilmelidir. Once bir isaretci yazilip sonra degisken adiyla
  * degistirmek, elle string birlestirmekten guvenli.
  */
 const writeVideoFile = (brief, paths, sourceBrief) => {
   const data = {
     format: brief.format ?? "reels",
-    ...(brief.background ? { background: brief.background } : {}),
+    ...(brief.background
+      ? {
+          background: brief.background.src
+            ? { ...brief.background, src: toMediaPath(brief.slug, brief.background.src) }
+            : brief.background,
+        }
+      : {}),
     ...(brief.transitionInSeconds !== undefined
       ? { transitionInSeconds: brief.transitionInSeconds }
       : {}),
     ...(brief.progressBar !== undefined ? { progressBar: brief.progressBar } : {}),
-    voiceoverSrc: path.basename(paths.audio),
-    scenes: brief.scenes,
+    voiceoverSrc: toMediaPath(brief.slug, path.basename(paths.audio)),
+    scenes: brief.scenes.map((scene) =>
+      scene.src ? { ...scene, src: toMediaPath(brief.slug, scene.src) } : scene,
+    ),
     captions: CAPTIONS_TOKEN,
   };
 
   const body = JSON.stringify(data, null, 2).replace(JSON.stringify(CAPTIONS_TOKEN), "captions");
 
   const lines = [
-    'import type { VideoData } from "../scenes/types";',
-    'import captions from "./' + brief.slug + '.captions.json";',
+    'import type { VideoData } from "../../scenes/types";',
+    'import captions from "./captions.json";',
     "",
     "// URETILMIS DOSYA -- kaynak brief: " + path.basename(sourceBrief),
   ];
@@ -229,10 +248,15 @@ const [briefPath, ...flags] = process.argv.slice(2);
 if (!briefPath) fail("Kullanim: node scripts/produce.mjs <brief.json> [--no-render]");
 
 const brief = readBrief(briefPath);
+const videoDir = path.join("src", "videos", brief.slug);
+const mediaDir = path.join("public", brief.slug);
+fs.mkdirSync(videoDir, { recursive: true });
+fs.mkdirSync(mediaDir, { recursive: true });
+
 const paths = {
-  audio: path.join("public", brief.slug + "-vo.mp3"),
-  captions: path.join("src", "videos", brief.slug + ".captions.json"),
-  videoFile: path.join("src", "videos", brief.slug + ".ts"),
+  audio: path.join(mediaDir, "vo.mp3"),
+  captions: path.join(videoDir, "captions.json"),
+  videoFile: path.join(videoDir, "video.ts"),
   output: path.join("out", brief.slug + ".mp4"),
 };
 const compositionId = toPascalCase(brief.slug);

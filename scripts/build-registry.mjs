@@ -1,9 +1,9 @@
 /**
- * src/videos/ altindaki her video dosyasini tarayip src/videos/index.ts'i uretir.
+ * src/videos/ altindaki her video klasorunu tarayip src/videos/index.ts'i uretir.
  *
- * Kural: her video "<slug>.ts" adinda tek bir dosyadir ve VideoData'yi
- * "export default" ile disari verir. Kompozisyon kimligi slug'in PascalCase
- * halidir: "ram-yavaslama.ts" -> "RamYavaslama".
+ * Kural: her video "<slug>/" adinda bir klasordur ve icindeki "video.ts"
+ * VideoData'yi "export default" ile disari verir. Kompozisyon kimligi slug'in
+ * PascalCase halidir: "ram-yavaslama/" -> "RamYavaslama".
  *
  *   node scripts/build-registry.mjs
  *
@@ -14,6 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const VIDEOS_DIR = path.join("src", "videos");
+const VIDEO_FILE = "video.ts";
 const OUTPUT = path.join(VIDEOS_DIR, "index.ts");
 
 const toPascalCase = (slug) =>
@@ -29,13 +30,14 @@ const toCamelCase = (slug) => {
 };
 
 const slugs = fs
-  .readdirSync(VIDEOS_DIR)
-  .filter((file) => file.endsWith(".ts") && file !== "index.ts")
-  .map((file) => path.basename(file, ".ts"))
+  .readdirSync(VIDEOS_DIR, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .filter((slug) => fs.existsSync(path.join(VIDEOS_DIR, slug, VIDEO_FILE)))
   .sort();
 
 if (slugs.length === 0) {
-  throw new Error(`${VIDEOS_DIR} altinda video dosyasi bulunamadi`);
+  throw new Error(`${VIDEOS_DIR} altinda ${VIDEO_FILE} iceren klasor bulunamadi`);
 }
 
 // Iki farkli slug ayni kimlige dusebilir ("a-b" ve "a_b"); sessizce birini
@@ -49,7 +51,7 @@ for (const slug of slugs) {
   byId.set(id, slug);
 }
 
-const imports = slugs.map((slug) => `import ${toCamelCase(slug)} from "./${slug}";`).join("\n");
+const imports = slugs.map((slug) => `import ${toCamelCase(slug)} from "./${slug}/video";`).join("\n");
 const entries = slugs.map((slug) => `  ${toPascalCase(slug)}: ${toCamelCase(slug)},`).join("\n");
 
 const contents = `// URETILMIS DOSYA -- elle duzenlemeyin.

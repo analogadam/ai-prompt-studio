@@ -6,7 +6,7 @@ import { VIDEOS } from "./videos";
 
 /**
  * Kompozisyon listesi src/videos/ klasorunden uretilir; yeni bir video eklemek
- * icin oraya "<slug>.ts" dosyasi birakip `node scripts/build-registry.mjs`
+ * icin oraya "<slug>/video.ts" birakip `node scripts/build-registry.mjs`
  * calistirmak yeterlidir. Kimlik, slug'in PascalCase hali olur.
  */
 export const RemotionRoot: React.FC = () => {

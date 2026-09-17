@@ -1,5 +1,5 @@
-import type { VideoData } from "../scenes/types";
-import captions from "./gpt6.captions.json";
+import type { VideoData } from "../../scenes/types";
+import captions from "./captions.json";
 
 /**
  * 15 saniyelik dikey YouTube Shorts.
@@ -18,7 +18,7 @@ import captions from "./gpt6.captions.json";
 const video: VideoData = {
   format: "reels",
   background: { type: "aurora" },
-  voiceoverSrc: "gpt6-vo.mp3",
+  voiceoverSrc: "gpt6-shorts/vo.mp3",
   captions,
   scenes: [
     {

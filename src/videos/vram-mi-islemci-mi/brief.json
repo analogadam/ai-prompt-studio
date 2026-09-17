@@ -12,7 +12,7 @@
     {
       "type": "broll",
       "durationInSeconds": 7.2,
-      "src": "astra-bg.mp4",
+      "src": "islemci-anakart.mp4",
       "motion": "in",
       "caption": "İşlemci almana gerek yok",
       "highlight": "İşlemci"
@@ -20,8 +20,8 @@
     {
       "type": "broll",
       "durationInSeconds": 6,
-      "src": "astra-bg.mp4",
-      "startFromInSeconds": 8,
+      "src": "ekran-karti.mp4",
+      "startFromInSeconds": 2,
       "motion": "left",
       "caption": "Model ekran kartında çalışır",
       "highlight": "kartında"
@@ -56,11 +56,12 @@
     {
       "type": "broll",
       "durationInSeconds": 5,
-      "src": "astra-bg.mp4",
-      "startFromInSeconds": 18,
+      "src": "yavaslama.mp4",
+      "startFromInSeconds": 3,
       "motion": "out",
       "caption": "Hız 10 kat düşer",
-      "highlight": "10"
+      "highlight": "10",
+      "dim": 0.62
     },
     {
       "type": "outro",
