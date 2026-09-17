@@ -79,16 +79,18 @@ const HAS_UPPERCASE = /\p{Lu}/u;
  * Terimin ekiyle birlikte eslenmesi icin desen kurar.
  *
  * Turkce'de ek almayan teknik metin yoktur: "VRAM'ı", "SSD'ler",
- * "gigabayttan". Ek yok sayilirsa iki sey birden bozulur -- kisaltma ekinden
- * kopuk okunur, altyazi da dogru yazima geri donemez. Yazim kurali geregi
- * kisaltmalar ekini kesme isaretiyle alir, kucuk harfle yazilan kelimeler
- * bitisik alir; desen de bu ikisini ayirir. Boylece "GB'lık" eslesir ama
- * "GBit" eslesmez.
+ * "gigabayttan", "1080p'de". Ek yok sayilirsa iki sey birden bozulur --
+ * kisaltma ekinden kopuk okunur, altyazi da dogru yazima geri donemez.
+ *
+ * Buyuk harfli kisaltma ekini daima kesme isaretiyle alir; bu siki kural
+ * "GB'lık" ile eslesip "GBit" ile eslesmemeyi saglar. Kucuk harfli ya da
+ * rakamli terimde ek bitisik de olabilir kesmeli de ("gigabayttan",
+ * "1080p'de"), cunku oradaki karisiklik riski yok.
  */
 const buildPattern = (term) => {
   const suffix = HAS_UPPERCASE.test(term)
     ? "(?:['’](\\p{Ll}+))?"
-    : "(\\p{Ll}*)";
+    : "(?:['’]?(\\p{Ll}*))";
   return new RegExp(WORD_START + escapeRegExp(term) + suffix + WORD_END, "gu");
 };
 
