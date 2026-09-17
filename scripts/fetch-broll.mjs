@@ -14,6 +14,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { readApiKey } from "./env.mjs";
 
 const PUBLIC_DIR = "public";
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
@@ -25,24 +26,6 @@ const fail = (message) => {
   process.exit(1);
 };
 
-/** Anahtari ortamdan, yoksa .env dosyasindan okur. */
-const readApiKey = () => {
-  if (process.env.PEXELS_API_KEY) return process.env.PEXELS_API_KEY;
-
-  if (fs.existsSync(".env")) {
-    const line = fs
-      .readFileSync(".env", "utf8")
-      .split(/\r?\n/)
-      .find((row) => row.startsWith("PEXELS_API_KEY="));
-    if (line) return line.slice("PEXELS_API_KEY=".length).trim();
-  }
-
-  fail(
-    "PEXELS_API_KEY bulunamadi.\n" +
-      "https://www.pexels.com/api/ adresinden ucretsiz anahtar alip proje kokunde\n" +
-      '.env dosyasina "PEXELS_API_KEY=..." satiri olarak ekleyin.',
-  );
-};
 
 /**
  * Dikey ve yeterince genis olan en iyi dosyayi secer.
@@ -68,7 +51,10 @@ for (const name of [videoSlug, clipName]) {
 const targetDir = path.join(PUBLIC_DIR, videoSlug);
 
 const pickIndex = Math.max(1, Number(flags[flags.indexOf("--pick") + 1]) || 1) - 1;
-const apiKey = readApiKey();
+const apiKey = readApiKey(
+  "PEXELS_API_KEY",
+  "https://www.pexels.com/api/ adresinden ucretsiz alinir.",
+);
 
 const url = new URL(SEARCH_URL);
 url.searchParams.set("query", query);

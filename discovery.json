@@ -1,0 +1,21 @@
+{
+  "regionCode": "TR",
+  "language": "tr",
+  "windowHours": 48,
+  "minViews": 5000,
+  "maxDurationSeconds": 180,
+  "perChannelLimit": 2,
+  "limit": 25,
+  "queries": [
+    "ekran kartı",
+    "yapay zeka",
+    "işlemci",
+    "RAM bellek",
+    "SSD",
+    "bilgisayar toplama",
+    "yapay zeka modeli",
+    "oyun bilgisayarı",
+    "laptop performans",
+    "VRAM"
+  ]
+}

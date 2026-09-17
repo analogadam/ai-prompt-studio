@@ -51,12 +51,29 @@ out/<slug>.mp4       render
 Metin katmanlari cakismasin diye alan paylasimi sabittir: **manset ustte**,
 **karaoke altyazi altta**, Shorts arayuzunun kapattigi alt %17 bos.
 
+## Konu kesfi
+
+```bash
+node scripts/discover.mjs                      # son 48 saat, discovery.json ayarlariyla
+node scripts/discover.mjs --hours 72 --limit 40
+```
+
+`discovery.json` icindeki aramalari YouTube'da tarar, sonucu `topics/<tarih>.json`
+olarak yazar. Siralama ham izlenmeye gore degil **kanal ortalamasina gore asima**
+gore yapilir: 500 bin abonelinin 50 bin izlenmesi siradan, 2 bin abonelinin 50 bin
+izlenmesi sinyaldir. Her baslik ayrica kalibina gore isaretlenir (soru / iddia /
+duyuru / duz); kanal verisinde kazananlar soru ve iddia, kaybedenler duyuru oldu.
+
+Kota: her arama 100 birim, gunluk ucretsiz kota 10.000 birim. Varsayilan 10 arama
+gunde 1.000 birim harcar.
+
 ## Yardimci komutlar
 
 | Komut | Ne yapar |
 |---|---|
 | `npm run dev` | Remotion Studio -- canli onizleme |
 | `node scripts/fetch-broll.mjs "arama" <slug> <klip-adi>` | Pexels'ten dikey b-roll indirir, `public/<slug>/` altina koyar |
+| `node scripts/discover.mjs` | Nisdeki patlayan videolardan konu havuzu cikarir |
 | `node scripts/build-registry.mjs` | `src/videos/index.ts`'i yeniden uretir |
 | `npx remotion still <Kimlik> out/kontrol.png --frame=60` | Tek kare (hizli gorsel kontrol) |
 | `node scripts/transcribe.mjs public/ses.mp4` | Disaridan gelen kayittan altyazi |
@@ -76,8 +93,12 @@ src/
   videos/index.ts  kayit defteri (URETILMIS, elle duzenlenmez)
   Root.tsx         kompozisyonlari index.ts'ten okur
 public/<slug>/     videonun sesi ve klipleri (staticFile buradan okur)
+discovery.json     konu kesfi ayarlari (aramalar, esikler)
+topics/            gunluk konu havuzlari
 scripts/
   produce.mjs      uctan uca uretim
+  discover.mjs     konu kesfi (YouTube Data API)
+  env.mjs          .env icindeki API anahtarlarini okur
   lexicon.mjs      telaffuz sozlugu (VRAM -> "vi ram")
   fetch-broll.mjs  Pexels'ten klip indirme
   build-registry.mjs
@@ -91,8 +112,11 @@ scripts/
   Baska bir yorumlayici gerekirse: `PYTHON=... node scripts/produce.mjs ...`
 - Telaffuz duzeltmeleri `scripts/lexicon.mjs` icinde merkezi tutulur: seslendirmeye
   okunus gider, altyazida dogru yazim gorunur. Yeni kisaltmalar oraya eklenir.
-- `fetch-broll.mjs` icin ucretsiz Pexels anahtari gerekir; proje kokundeki `.env`
-  dosyasina `PEXELS_API_KEY=...` olarak yazilir (`.env` gitignore'dadir).
+- API anahtarlari proje kokundeki `.env` dosyasinda durur (`.env` gitignore'dadir):
+  `fetch-broll.mjs` icin `PEXELS_API_KEY`, `discover.mjs` icin `YOUTUBE_API_KEY`.
+  Ornek icin `.env.example` dosyasina bakin.
+- Pexels aramasinin ilk sirasi sik sik konuyla alakasiz cikar ("server rack" ->
+  lojistik deposu). Klip kabul edilmeden once karesine bakilir.
 - Render 4 paralel Chrome kullanir (`remotion.config.ts`). Makineyi tamamen bosaltmak
   istersen 2 yap; hizlandirmak istersen 6-8 dene, ama sistem agirlasir.
 - Ilk `transcribe.mjs` calistirmasi agirdir: Whisper.cpp kaynaktan derlenir ve model
