@@ -29,7 +29,8 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "radar": "node --use-system-ca scripts/radar.mjs"
   },
   "sideEffects": [
     "*.css"
