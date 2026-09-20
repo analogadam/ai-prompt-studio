@@ -12,7 +12,8 @@
  * abonelinin 50 bin izlenmesi siradan, 2 bin abonelinin 50 bin izlenmesi
  * sinyaldir. Ikincisi kopyalanabilir, birincisi kanal buyuklugunun sonucudur.
  *
- * Ayarlar discovery.json icinde; anahtar .env icindeki YOUTUBE_API_KEY.
+ * Ayarlar discovery.json "youtube" bolumunde; anahtar .env icindeki
+ * YOUTUBE_API_KEY.
  *
  * Kota: search.list cagrisi 100 birim, videos/channels.list 1 birim. Gunluk
  * ucretsiz kota 10.000 birim, yani discovery.json'daki her arama gunun
@@ -21,50 +22,19 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { fail, readFlag, readSection } from "./ayar.mjs";
 import { readApiKey } from "./env.mjs";
-import {
-  termsPattern,
-  toTurkishLower,
-  wordsPattern,
-  WORD_START,
-} from "./text.mjs";
+import { titleShape } from "./baslik.mjs";
+import { termsPattern, toTurkishLower, wordsPattern } from "./text.mjs";
 
 const API = "https://www.googleapis.com/youtube/v3";
-const CONFIG_FILE = "discovery.json";
 const OUTPUT_DIR = "topics";
 // Tek istekte sorulabilecek video/kanal sayisi (API siniri).
 const ID_BATCH = 50;
 const SEARCH_COST = 100;
 
-const fail = (message) => {
-  console.error("\nHATA: " + message + "\n");
-  process.exit(1);
-};
-
-// Anahtar akis baslarken okunur: betik iceri aktarildiginda (baslik kalibini
-// denemek gibi) anahtar sormasin.
+// Anahtar akis baslarken okunur: betik iceri aktarilmak anahtar sormasin.
 let apiKey;
-
-/** Sayisal bayraklari okur: --hours 72 gibi. */
-const readFlag = (name, fallback) => {
-  const index = process.argv.indexOf("--" + name);
-  if (index === -1) return fallback;
-
-  const value = Number(process.argv[index + 1]);
-  if (!Number.isFinite(value) || value <= 0)
-    fail("--" + name + " icin gecerli bir sayi verin");
-  return value;
-};
-
-const readConfig = () => {
-  if (!fs.existsSync(CONFIG_FILE)) fail(CONFIG_FILE + " bulunamadi");
-
-  const config = JSON.parse(fs.readFileSync(CONFIG_FILE, "utf8"));
-  if (!Array.isArray(config.queries) || config.queries.length === 0) {
-    fail(CONFIG_FILE + " icinde en az bir arama (queries) olmali");
-  }
-  return config;
-};
 
 const request = async (endpoint, params) => {
   const url = new URL(API + "/" + endpoint);
@@ -112,53 +82,6 @@ const toSeconds = (duration) => {
     part ? Number(part) : 0,
   );
   return ((days * 24 + hours) * 60 + minutes) * 60 + seconds;
-};
-
-// Soru eki ayri yazilir ("oyun odakli mi"), yani kelime olarak aranir.
-const QUESTION = wordsPattern([
-  "nasıl",
-  "neden",
-  "niçin",
-  "niye",
-  "kaç",
-  "hangi",
-  "ne kadar",
-  "mı",
-  "mi",
-  "mu",
-  "mü",
-]);
-const SECOND_PERSON = wordsPattern([
-  "sen",
-  "senin",
-  "sana",
-  "sakın",
-  "yapma",
-  "alma",
-  "almayın",
-  "dikkat",
-  "bunu",
-  "şunu",
-]);
-// "GPT-6", "RTX 5090", "Gemini 3": marka + surum kalibi.
-const PRODUCT_NAME = new RegExp(WORD_START + "\\p{Lu}\\p{L}*[- ]?\\d", "u");
-
-/**
- * Baslik kalibini isaretler.
- *
- * Kanal verisinde kazananlar hep soru ya da izleyiciye yonelik iddia, kaybedenler
- * hep urun duyurusu oldu ("GPT-6 Astra" 4 izlenme). Kalip, konuyu almadan once
- * bakilacak ilk sey.
- */
-export const titleShape = (title) => {
-  // Desenler kucuk harfli; "YAPAY ZEKA MI" ancak boyle soru sayilir.
-  const text = toTurkishLower(title);
-
-  if (text.includes("?") || QUESTION.test(text)) return "soru";
-  if (SECOND_PERSON.test(text)) return "iddia";
-  // Urun kalibi buyuk harf arar, bu yuzden ham baslikta bakilir.
-  if (PRODUCT_NAME.test(title)) return "duyuru";
-  return "duz";
 };
 
 const HASHTAG = /#[\p{L}\p{N}_]+/gu;
@@ -367,8 +290,8 @@ const formatRow = (candidate, index) =>
 
 // --- akis ---
 
-// Yalnizca dogrudan calistirildiginda taramaya baslar; iceri aktarildiginda
-// (titleShape'i denemek gibi) sadece yardimcilari verir.
+// Yalnizca dogrudan calistirildiginda taramaya baslar: iceri aktarilmak API
+// anahtari sormamali, kota harcamamali.
 const isDirectRun =
   process.argv[1] &&
   path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
@@ -380,7 +303,7 @@ if (isDirectRun) {
       '(once "YouTube Data API v3" etkinlestirilir).',
   );
 
-  const config = readConfig();
+  const config = readSection("youtube", "queries");
   const windowHours = readFlag("hours", config.windowHours ?? 48);
   const minViews = readFlag("min-views", config.minViews ?? 5000);
   const limit = readFlag("limit", config.limit ?? 25);
