@@ -1,0 +1,21 @@
+{
+  "slug": "reklamla-konusacaksin",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Artik reklamla konusacaksin",
+  "narration": "ChatGPT'ye reklam geldi, ama bildiğin reklam değil. Tıklamıyorsun, reklamla konuşuyorsun. Şimdilik Amerika'da test ediliyor. Yakında satıcıyla değil, yapay zekâsıyla pazarlık edeceksin.",
+  "seed": 1,
+  "rate": "+0%",
+  "youtube": {
+    "title": "Artık reklamla konuşacaksın",
+    "description": "OpenAI, ChatGPT reklamlarında Sponsored Agents'ı test etmeye başladı: reklamın kendisi konuşabilen bir yapay zekâ. Tıklamak yerine soruyorsun, o cevaplıyor. İlk ortaklar Wayfair ve Angi, şimdilik ABD'de test ediliyor.",
+    "tags": [
+      "chatgpt",
+      "yapay zeka",
+      "openai",
+      "reklam",
+      "yapay zeka ajanı",
+      "teknoloji"
+    ]
+  }
+}

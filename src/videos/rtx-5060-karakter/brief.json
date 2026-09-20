@@ -1,0 +1,21 @@
+{
+  "slug": "rtx-5060-karakter",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "RTX 5060 yapay zeka icin yeterli mi",
+  "narration": "RTX 5060 aldın, yapay zeka çalıştıracaksın. Yeterli mi? Cevap kartın hızında değil, belleğinde. 5060'ta sekiz cigabayt VRAM var. Yedi milyar parametreli bir model, sıkıştırılmış halde yaklaşık beş cigabayt yer kaplıyor. Rahat çalışır. On üç milyarlık model sekiz cigabaytı zorluyor; taşarsa hız birkaç kat düşüyor. Otuz milyarlık modeli hiç deneme, tek başına on sekiz cigabayt ister. Görsel üretimde ise sekiz cigabayt yetiyor. Yani 5060 yapay zekaya girer, ama küçük modellerle. Sınırı koyan kartın hızı değil, sekiz cigabayt.",
+  "seed": 1,
+  "youtube": {
+    "title": "RTX 5060 yapay zeka için yeterli mi?",
+    "description": "Sınırı kartın hızı değil belleği koyar. 8 GB VRAM ile 7 milyarlık model rahat çalışır, 13 milyarlık tam sınırda, 30 milyarlık hiç çalışmaz.",
+    "tags": [
+      "rtx 5060",
+      "ekran kartı",
+      "vram",
+      "yapay zeka",
+      "yerel model",
+      "nvidia",
+      "donanım"
+    ]
+  }
+}

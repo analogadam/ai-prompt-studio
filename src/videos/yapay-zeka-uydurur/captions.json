@@ -1,0 +1,247 @@
+[
+  {
+    "text": "Yap",
+    "startMs": 200,
+    "endMs": 220,
+    "timestampMs": 360,
+    "confidence": 0.617849
+  },
+  {
+    "text": "ay",
+    "startMs": 220,
+    "endMs": 370,
+    "timestampMs": 720,
+    "confidence": 0.958274
+  },
+  {
+    "text": " z",
+    "startMs": 370,
+    "endMs": 430,
+    "timestampMs": 1080,
+    "confidence": 0.602687
+  },
+  {
+    "text": "eka",
+    "startMs": 430,
+    "endMs": 650,
+    "timestampMs": 1220,
+    "confidence": 0.788505
+  },
+  {
+    "text": " sana",
+    "startMs": 650,
+    "endMs": 970,
+    "timestampMs": 1220,
+    "confidence": 0.783519
+  },
+  {
+    "text": " y",
+    "startMs": 970,
+    "endMs": 1060,
+    "timestampMs": 1820,
+    "confidence": 0.947379
+  },
+  {
+    "text": "alan",
+    "startMs": 1060,
+    "endMs": 1310,
+    "timestampMs": 1940,
+    "confidence": 0.989239
+  },
+  {
+    "text": " söyle",
+    "startMs": 1310,
+    "endMs": 1760,
+    "timestampMs": 3160,
+    "confidence": 0.965959
+  },
+  {
+    "text": "miyor",
+    "startMs": 1760,
+    "endMs": 2130,
+    "timestampMs": 3160,
+    "confidence": 0.899806
+  },
+  {
+    "text": ".",
+    "startMs": 2130,
+    "endMs": 2400,
+    "timestampMs": 3160,
+    "confidence": 0.864807
+  },
+  {
+    "text": " S",
+    "startMs": 2400,
+    "endMs": 2890,
+    "timestampMs": 3320,
+    "confidence": 0.960365
+  },
+  {
+    "text": "adece",
+    "startMs": 2890,
+    "endMs": 3130,
+    "timestampMs": 3540,
+    "confidence": 0.995837
+  },
+  {
+    "text": " bil",
+    "startMs": 3130,
+    "endMs": 3290,
+    "timestampMs": 3880,
+    "confidence": 0.972624
+  },
+  {
+    "text": "medi",
+    "startMs": 3290,
+    "endMs": 3470,
+    "timestampMs": 4000,
+    "confidence": 0.994744
+  },
+  {
+    "text": "ğini",
+    "startMs": 3470,
+    "endMs": 3860,
+    "timestampMs": 4220,
+    "confidence": 0.968193
+  },
+  {
+    "text": " söyle",
+    "startMs": 3860,
+    "endMs": 4350,
+    "timestampMs": 4500,
+    "confidence": 0.997933
+  },
+  {
+    "text": "me",
+    "startMs": 4350,
+    "endMs": 4510,
+    "timestampMs": 4680,
+    "confidence": 0.826598
+  },
+  {
+    "text": "yi",
+    "startMs": 4510,
+    "endMs": 4670,
+    "timestampMs": 4720,
+    "confidence": 0.980626
+  },
+  {
+    "text": " bil",
+    "startMs": 4670,
+    "endMs": 4910,
+    "timestampMs": 4900,
+    "confidence": 0.929271
+  },
+  {
+    "text": "miyor",
+    "startMs": 4910,
+    "endMs": 5350,
+    "timestampMs": 5100,
+    "confidence": 0.99107
+  },
+  {
+    "text": ".",
+    "startMs": 5350,
+    "endMs": 5360,
+    "timestampMs": 5980,
+    "confidence": 0.977594
+  },
+  {
+    "text": " O",
+    "startMs": 5360,
+    "endMs": 6170,
+    "timestampMs": 6340,
+    "confidence": 0.971413
+  },
+  {
+    "text": " yüzden",
+    "startMs": 6170,
+    "endMs": 6260,
+    "timestampMs": 6600,
+    "confidence": 0.996132
+  },
+  {
+    "text": " em",
+    "startMs": 6260,
+    "endMs": 6370,
+    "timestampMs": 6820,
+    "confidence": 0.78255
+  },
+  {
+    "text": "in",
+    "startMs": 6370,
+    "endMs": 6570,
+    "timestampMs": 6900,
+    "confidence": 0.988821
+  },
+  {
+    "text": " konuş",
+    "startMs": 6570,
+    "endMs": 7270,
+    "timestampMs": 7240,
+    "confidence": 0.99681
+  },
+  {
+    "text": "uy",
+    "startMs": 7270,
+    "endMs": 7370,
+    "timestampMs": 7380,
+    "confidence": 0.939382
+  },
+  {
+    "text": "orsa",
+    "startMs": 7370,
+    "endMs": 7890,
+    "timestampMs": 7660,
+    "confidence": 0.99038
+  },
+  {
+    "text": ",",
+    "startMs": 7890,
+    "endMs": 8000,
+    "timestampMs": 7900,
+    "confidence": 0.793902
+  },
+  {
+    "text": " bir",
+    "startMs": 8000,
+    "endMs": 8230,
+    "timestampMs": 8000,
+    "confidence": 0.852968
+  },
+  {
+    "text": " desen",
+    "startMs": 8230,
+    "endMs": 8560,
+    "timestampMs": 8320,
+    "confidence": 0.685566
+  },
+  {
+    "text": " kont",
+    "startMs": 8560,
+    "endMs": 8840,
+    "timestampMs": 8640,
+    "confidence": 0.949439
+  },
+  {
+    "text": "rol",
+    "startMs": 8840,
+    "endMs": 9040,
+    "timestampMs": 8760,
+    "confidence": 0.966465
+  },
+  {
+    "text": " et",
+    "startMs": 9040,
+    "endMs": 9210,
+    "timestampMs": 9060,
+    "confidence": 0.952835
+  },
+  {
+    "text": ".",
+    "startMs": 9210,
+    "endMs": 9460,
+    "timestampMs": 9260,
+    "confidence": 0.960915
+  }
+]

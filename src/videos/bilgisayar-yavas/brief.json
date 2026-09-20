@@ -1,0 +1,19 @@
+{
+  "slug": "bilgisayar-yavas",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Bilgisayarın neden bu kadar yavaş?",
+  "narration": "Bilgisayarın yavaşsa hemen işlemciyi suçlama. Çoğu zaman sorun, hâlâ içinde dönen eski bir harddisk. Es es di tak, farkı ilk açılışta görürsün.",
+  "seed": 1,
+  "youtube": {
+    "title": "Bilgisayarın neden bu kadar yavaş?",
+    "description": "Yavaşlığın en yaygın sebebi işlemci değil, eski mekanik disk. SSD ile açılış ve program yükleme birkaç kat hızlanır.\n\nHer gün yapay zekâ ve donanım üzerine kısa bir soru.",
+    "tags": [
+      "ssd",
+      "harddisk",
+      "bilgisayar yavaş",
+      "donanım",
+      "bilgisayar hızlandırma"
+    ]
+  }
+}

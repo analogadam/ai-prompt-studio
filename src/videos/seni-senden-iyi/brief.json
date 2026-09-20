@@ -1,0 +1,18 @@
+{
+  "slug": "seni-senden-iyi",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Yapay zekâ seni senden iyi mi tanıyor?",
+  "narration": "Yapay zekâ seni tanımıyor. Sadece bir sonraki kelimeni tahmin ediyor. Ama yeterince tahmin edince, seni senden iyi bilen bir şeye dönüşüyor.",
+  "seed": 1,
+  "youtube": {
+    "title": "Yapay zekâ seni senden iyi mi tanıyor?",
+    "description": "Dil modeli seni tanımaz, sadece bir sonraki kelimeni tahmin eder. Ama tahmin yeterince iyi olunca fark kalmıyor.\n\nHer gün yapay zekâ ve donanım üzerine kısa bir soru.",
+    "tags": [
+      "yapay zeka",
+      "chatgpt",
+      "dil modeli",
+      "yapay zeka nasıl çalışır"
+    ]
+  }
+}

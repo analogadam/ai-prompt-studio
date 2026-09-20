@@ -1,0 +1,429 @@
+[
+  {
+    "text": "Ç",
+    "startMs": 160,
+    "endMs": 210,
+    "timestampMs": 320,
+    "confidence": 0.87756
+  },
+  {
+    "text": "ek",
+    "startMs": 210,
+    "endMs": 320,
+    "timestampMs": 420,
+    "confidence": 0.867801
+  },
+  {
+    "text": " c",
+    "startMs": 320,
+    "endMs": 460,
+    "timestampMs": 540,
+    "confidence": 0.19058
+  },
+  {
+    "text": "ip",
+    "startMs": 460,
+    "endMs": 560,
+    "timestampMs": 640,
+    "confidence": 0.682494
+  },
+  {
+    "text": "iti",
+    "startMs": 560,
+    "endMs": 800,
+    "timestampMs": 880,
+    "confidence": 0.631117
+  },
+  {
+    "text": "ğ",
+    "startMs": 800,
+    "endMs": 960,
+    "timestampMs": 880,
+    "confidence": 0.560201
+  },
+  {
+    "text": "e",
+    "startMs": 960,
+    "endMs": 1140,
+    "timestampMs": 940,
+    "confidence": 0.863057
+  },
+  {
+    "text": " rek",
+    "startMs": 1140,
+    "endMs": 1290,
+    "timestampMs": 1140,
+    "confidence": 0.900006
+  },
+  {
+    "text": "lam",
+    "startMs": 1290,
+    "endMs": 1530,
+    "timestampMs": 1280,
+    "confidence": 0.996172
+  },
+  {
+    "text": " geldi",
+    "startMs": 1530,
+    "endMs": 2070,
+    "timestampMs": 1740,
+    "confidence": 0.971764
+  },
+  {
+    "text": ",",
+    "startMs": 2070,
+    "endMs": 2110,
+    "timestampMs": 2040,
+    "confidence": 0.439303
+  },
+  {
+    "text": " ama",
+    "startMs": 2110,
+    "endMs": 2280,
+    "timestampMs": 2220,
+    "confidence": 0.661528
+  },
+  {
+    "text": " bild",
+    "startMs": 2280,
+    "endMs": 2510,
+    "timestampMs": 2480,
+    "confidence": 0.977732
+  },
+  {
+    "text": "iğ",
+    "startMs": 2510,
+    "endMs": 2680,
+    "timestampMs": 2560,
+    "confidence": 0.867787
+  },
+  {
+    "text": "in",
+    "startMs": 2680,
+    "endMs": 2880,
+    "timestampMs": 2640,
+    "confidence": 0.979116
+  },
+  {
+    "text": " rek",
+    "startMs": 2880,
+    "endMs": 2960,
+    "timestampMs": 2840,
+    "confidence": 0.973918
+  },
+  {
+    "text": "lam",
+    "startMs": 2960,
+    "endMs": 3130,
+    "timestampMs": 3020,
+    "confidence": 0.99898
+  },
+  {
+    "text": " değil",
+    "startMs": 3130,
+    "endMs": 3470,
+    "timestampMs": 4180,
+    "confidence": 0.993953
+  },
+  {
+    "text": ".",
+    "startMs": 3470,
+    "endMs": 3580,
+    "timestampMs": 4180,
+    "confidence": 0.900172
+  },
+  {
+    "text": " T",
+    "startMs": 3580,
+    "endMs": 3650,
+    "timestampMs": 4560,
+    "confidence": 0.829902
+  },
+  {
+    "text": "ık",
+    "startMs": 3650,
+    "endMs": 3900,
+    "timestampMs": 4640,
+    "confidence": 0.952313
+  },
+  {
+    "text": "lam",
+    "startMs": 3900,
+    "endMs": 4530,
+    "timestampMs": 4780,
+    "confidence": 0.968514
+  },
+  {
+    "text": "ıyorsun",
+    "startMs": 4530,
+    "endMs": 4780,
+    "timestampMs": 5160,
+    "confidence": 0.872071
+  },
+  {
+    "text": ",",
+    "startMs": 4780,
+    "endMs": 4940,
+    "timestampMs": 5400,
+    "confidence": 0.869994
+  },
+  {
+    "text": " rek",
+    "startMs": 4940,
+    "endMs": 5180,
+    "timestampMs": 5540,
+    "confidence": 0.975429
+  },
+  {
+    "text": "lam",
+    "startMs": 5180,
+    "endMs": 5430,
+    "timestampMs": 5800,
+    "confidence": 0.998041
+  },
+  {
+    "text": "la",
+    "startMs": 5430,
+    "endMs": 5640,
+    "timestampMs": 5940,
+    "confidence": 0.770515
+  },
+  {
+    "text": " konuş",
+    "startMs": 5640,
+    "endMs": 6060,
+    "timestampMs": 6240,
+    "confidence": 0.997404
+  },
+  {
+    "text": "uyorsun",
+    "startMs": 6060,
+    "endMs": 6630,
+    "timestampMs": 6700,
+    "confidence": 0.896894
+  },
+  {
+    "text": ".",
+    "startMs": 6630,
+    "endMs": 6900,
+    "timestampMs": 7440,
+    "confidence": 0.932037
+  },
+  {
+    "text": " Ş",
+    "startMs": 6900,
+    "endMs": 7280,
+    "timestampMs": 7980,
+    "confidence": 0.761144
+  },
+  {
+    "text": "im",
+    "startMs": 7280,
+    "endMs": 7280,
+    "timestampMs": 8080,
+    "confidence": 0.992267
+  },
+  {
+    "text": "d",
+    "startMs": 7280,
+    "endMs": 7760,
+    "timestampMs": 8280,
+    "confidence": 0.995687
+  },
+  {
+    "text": "ilik",
+    "startMs": 7760,
+    "endMs": 7880,
+    "timestampMs": 8280,
+    "confidence": 0.996795
+  },
+  {
+    "text": " Amerika",
+    "startMs": 7880,
+    "endMs": 8450,
+    "timestampMs": 8680,
+    "confidence": 0.598193
+  },
+  {
+    "text": "'d",
+    "startMs": 8450,
+    "endMs": 8690,
+    "timestampMs": 8900,
+    "confidence": 0.886468
+  },
+  {
+    "text": "a",
+    "startMs": 8690,
+    "endMs": 8730,
+    "timestampMs": 8900,
+    "confidence": 0.991437
+  },
+  {
+    "text": " test",
+    "startMs": 8730,
+    "endMs": 9170,
+    "timestampMs": 9140,
+    "confidence": 0.660221
+  },
+  {
+    "text": " ed",
+    "startMs": 9170,
+    "endMs": 9310,
+    "timestampMs": 9280,
+    "confidence": 0.719323
+  },
+  {
+    "text": "iliyor",
+    "startMs": 9310,
+    "endMs": 9980,
+    "timestampMs": 9520,
+    "confidence": 0.975891
+  },
+  {
+    "text": ".",
+    "startMs": 9980,
+    "endMs": 9980,
+    "timestampMs": 10500,
+    "confidence": 0.958289
+  },
+  {
+    "text": " Yak",
+    "startMs": 9980,
+    "endMs": 10550,
+    "timestampMs": 10920,
+    "confidence": 0.926531
+  },
+  {
+    "text": "ında",
+    "startMs": 10550,
+    "endMs": 10760,
+    "timestampMs": 11120,
+    "confidence": 0.928893
+  },
+  {
+    "text": " sat",
+    "startMs": 10760,
+    "endMs": 10770,
+    "timestampMs": 11380,
+    "confidence": 0.939057
+  },
+  {
+    "text": "ı",
+    "startMs": 10770,
+    "endMs": 10930,
+    "timestampMs": 11420,
+    "confidence": 0.940047
+  },
+  {
+    "text": "cı",
+    "startMs": 10930,
+    "endMs": 11110,
+    "timestampMs": 11540,
+    "confidence": 0.903783
+  },
+  {
+    "text": " ile",
+    "startMs": 11110,
+    "endMs": 11370,
+    "timestampMs": 12000,
+    "confidence": 0.8473
+  },
+  {
+    "text": " değil",
+    "startMs": 11370,
+    "endMs": 11770,
+    "timestampMs": 12000,
+    "confidence": 0.987411
+  },
+  {
+    "text": ",",
+    "startMs": 11770,
+    "endMs": 11890,
+    "timestampMs": 12200,
+    "confidence": 0.895096
+  },
+  {
+    "text": " yap",
+    "startMs": 11890,
+    "endMs": 12240,
+    "timestampMs": 12400,
+    "confidence": 0.871377
+  },
+  {
+    "text": "ay",
+    "startMs": 12240,
+    "endMs": 12240,
+    "timestampMs": 12520,
+    "confidence": 0.851064
+  },
+  {
+    "text": " z",
+    "startMs": 12240,
+    "endMs": 12310,
+    "timestampMs": 12620,
+    "confidence": 0.749206
+  },
+  {
+    "text": "ek",
+    "startMs": 12310,
+    "endMs": 12450,
+    "timestampMs": 12740,
+    "confidence": 0.965527
+  },
+  {
+    "text": "ası",
+    "startMs": 12450,
+    "endMs": 12740,
+    "timestampMs": 12980,
+    "confidence": 0.469618
+  },
+  {
+    "text": " ile",
+    "startMs": 12740,
+    "endMs": 12970,
+    "timestampMs": 13120,
+    "confidence": 0.988968
+  },
+  {
+    "text": " paz",
+    "startMs": 12970,
+    "endMs": 13200,
+    "timestampMs": 13380,
+    "confidence": 0.596309
+  },
+  {
+    "text": "arl",
+    "startMs": 13200,
+    "endMs": 13370,
+    "timestampMs": 13540,
+    "confidence": 0.994696
+  },
+  {
+    "text": "ık",
+    "startMs": 13370,
+    "endMs": 13620,
+    "timestampMs": 13580,
+    "confidence": 0.785188
+  },
+  {
+    "text": " ede",
+    "startMs": 13620,
+    "endMs": 13780,
+    "timestampMs": 13780,
+    "confidence": 0.989242
+  },
+  {
+    "text": "ceksin",
+    "startMs": 13780,
+    "endMs": 14340,
+    "timestampMs": 14120,
+    "confidence": 0.984267
+  },
+  {
+    "text": ".",
+    "startMs": 14340,
+    "endMs": 14340,
+    "timestampMs": 14320,
+    "confidence": 0.980037
+  }
+]

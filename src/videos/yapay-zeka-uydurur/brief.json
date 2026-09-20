@@ -1,0 +1,18 @@
+{
+  "slug": "yapay-zeka-uydurur",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Yapay zekâ neden uydurur?",
+  "narration": "Yapay zekâ sana yalan söylemiyor. Sadece bilmediğini söylemeyi bilmiyor. O yüzden emin konuşuyorsa, bir de sen kontrol et.",
+  "seed": 1,
+  "youtube": {
+    "title": "Yapay zekâ neden uydurur?",
+    "description": "Model doğruyu değil, en olası cevabı üretir. Emin görünmesi doğru olduğu anlamına gelmez.\n\nHer gün yapay zekâ ve donanım üzerine kısa bir soru.",
+    "tags": [
+      "yapay zeka",
+      "chatgpt",
+      "halüsinasyon",
+      "yapay zeka hataları"
+    ]
+  }
+}

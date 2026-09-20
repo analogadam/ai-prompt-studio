@@ -1,0 +1,19 @@
+{
+  "slug": "vram-yeter-mi",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Ekran kartın yapay zekâya yeter mi?",
+  "narration": "Yapay zekâ çalıştıracaksan kartın hızına bakma. Seni durduracak olan bellek. Sekiz cigabayt, küçük modellere yeter, büyüklerine asla.",
+  "seed": 1,
+  "youtube": {
+    "title": "Ekran kartın yapay zekâya yeter mi?",
+    "description": "Yerel yapay zekâda sınırı kartın hızı değil VRAM koyar. 8 GB ile 7 milyar parametreli modeller rahat, 30 milyarlık modeller çalışmaz.\n\nHer gün yapay zekâ ve donanım üzerine kısa bir soru.",
+    "tags": [
+      "vram",
+      "ekran kartı",
+      "yapay zeka",
+      "yerel model",
+      "nvidia"
+    ]
+  }
+}

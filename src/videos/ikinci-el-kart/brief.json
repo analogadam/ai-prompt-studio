@@ -1,0 +1,21 @@
+{
+  "slug": "ikinci-el-kart",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Ikinci el ekran karti madencilikte mi calismis",
+  "narration": "İkinci el ekran kartı aldın. Kutusu var, faturası var, fanları tertemiz. Ama madencilikte iki yıl çalışmış olabilir. Bunu satıcı söylemez, sistem söyler. Kartı tak, sıcaklığa bak: boştayken altmış dereceyi geçiyorsa macunu kurumuş demektir. Bir de fan hızını dinle. Sessizse iyi, uğulduyorsa pazarlık payın var. Satıcıya tek soru sor: kaç saat çalıştı? Cevap vermiyorsa cevabı almışsındır.",
+  "seed": 1,
+  "rate": "+0%",
+  "youtube": {
+    "title": "İkinci el ekran kartı madencilikte mi çalışmış?",
+    "description": "Tertemiz görünen kart, en çok yorulmuş kart olabilir. Boştaki sıcaklık ve fan sesi, satıcının söylemediğini söyler.",
+    "tags": [
+      "ikinci el ekran kartı",
+      "ekran kartı",
+      "madencilik",
+      "donanım",
+      "gpu",
+      "bilgisayar toplama"
+    ]
+  }
+}
