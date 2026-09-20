@@ -56,9 +56,14 @@ const FPS = 16;
 const CHUNK = 77;
 const MIN_CHUNK = 5;
 
-/** Uretim olcusu. Shorts ciktisi her halukarda 1080x1920'ye buyutulur. */
-const GENISLIK = 480;
-const YUKSEKLIK = 832;
+/**
+ * Uretim olcusu. Shorts ciktisi her halukarda 1080x1920'ye buyutulur.
+ * 480x832 olculdu ve birakildi: o olcude agiz birkac piksel kaliyor, dudak
+ * cizgisi ve disler kayboluyor. 640x1104 maliyeti tam iki katina cikariyor
+ * ama hem goruntu netligini hem dudak senkronu algisini duzeltiyor.
+ */
+const GENISLIK = 640;
+const YUKSEKLIK = 1104;
 const CIKTI_GENISLIK = 1080;
 const CIKTI_YUKSEKLIK = 1920;
 
@@ -338,9 +343,12 @@ const main = async () => {
   if (!genislik || !yukseklik) fail("--boyut olcusu GENISLIKxYUKSEKLIK biciminde olmali");
 
   const seed = Number(readFlag(args, "seed", brief.seed ?? 1));
-  const steps = Number(readFlag(args, "steps", 6));
-  const cfg = Number(readFlag(args, "cfg", brief.cfg ?? 1.0));
-  const lora = Number(readFlag(args, "lora", brief.lora ?? 1.0));
+  // Uretim ayari. cfg 1.0 ses kilavuzunu tamamen kapatiyor (olumsuz dal hic
+  // hesaplanmiyor), dudak senkronu orada oluyor; hiz lorasi da cfg 1.0 icin
+  // damitildigi icin ikisi birlikte degisiyor.
+  const steps = Number(readFlag(args, "steps", 10));
+  const cfg = Number(readFlag(args, "cfg", brief.cfg ?? 4.5));
+  const lora = Number(readFlag(args, "lora", brief.lora ?? 0.4));
 
   fs.mkdirSync(path.join(PUBLIC_DIR, slug), { recursive: true });
   const audioPath = path.join(PUBLIC_DIR, slug, "konusma.mp3");
