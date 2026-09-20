@@ -1,0 +1,22 @@
+{
+  "slug": "kartinda-model",
+  "format": "karakter",
+  "karakter": "ada",
+  "title": "Ekran kartinda ChatGPT gibi bir model calistirabilir misin",
+  "narration": "Ekran kartında ChatGPT gibi bir model çalıştırabilir misin? Artık evet. Yirmi yedi milyarlık model on sekiz cigabayt, görüntüyü de anlıyor. Bulut kadar iyi değil ama gündelik işte fark kapanıyor.",
+  "seed": 1,
+  "rate": "+0%",
+  "youtube": {
+    "title": "Ekran kartında ChatGPT gibi bir model çalıştırabilir misin?",
+    "description": "Alibaba'nın Qwen3.8-27B modeli 14 Ağustos 2026'da açık ağırlıklarla yayınlandı: 27 milyar parametre, görüntü anlama, 262 bin token bağlam. 4 bit sıkıştırılmış hali yaklaşık 18 GB, yani tek tüketici ekran kartına sığıyor. Hugging Face'te 14 Eylül'e kadarki 30 günde 7,7 milyon indirme aldı.\n\nBulut modellerinin yerini tutmuyor; zor akıl yürütme ve ajan işlerinde kapalı modeller hâlâ önde. Ama gündelik işlerde aradaki fark kapanıyor.",
+    "tags": [
+      "yerel yapay zeka",
+      "qwen",
+      "ekran kartı",
+      "vram",
+      "açık kaynak model",
+      "ollama",
+      "yapay zeka"
+    ]
+  }
+}
